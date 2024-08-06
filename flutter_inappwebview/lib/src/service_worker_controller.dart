@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController}
+///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController}
 class ServiceWorkerController {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController}
   ServiceWorkerController()
       : this.fromPlatformCreationParams(
           const PlatformServiceWorkerControllerCreationParams(),
@@ -32,42 +32,42 @@ class ServiceWorkerController {
     return _instance!;
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController.serviceWorkerClient}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController.serviceWorkerClient}
   ServiceWorkerClient? get serviceWorkerClient => platform.serviceWorkerClient;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController.setServiceWorkerClient}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController.setServiceWorkerClient}
   setServiceWorkerClient(ServiceWorkerClient? value) =>
       platform.setServiceWorkerClient(value);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController.getAllowContentAccess}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController.getAllowContentAccess}
   static Future<bool> getAllowContentAccess() =>
       PlatformServiceWorkerController.static().getAllowContentAccess();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController.getAllowFileAccess}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController.getAllowFileAccess}
   static Future<bool> getAllowFileAccess() =>
       PlatformServiceWorkerController.static().getAllowFileAccess();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController.getBlockNetworkLoads}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController.getBlockNetworkLoads}
   static Future<bool> getBlockNetworkLoads() =>
       PlatformServiceWorkerController.static().getBlockNetworkLoads();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController.getCacheMode}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController.getCacheMode}
   static Future<CacheMode?> getCacheMode() =>
       PlatformServiceWorkerController.static().getCacheMode();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController.setAllowContentAccess}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController.setAllowContentAccess}
   static Future<void> setAllowContentAccess(bool allow) =>
       PlatformServiceWorkerController.static().setAllowContentAccess(allow);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController.setAllowFileAccess}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController.setAllowFileAccess}
   static Future<void> setAllowFileAccess(bool allow) =>
       PlatformServiceWorkerController.static().setAllowFileAccess(allow);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController.setBlockNetworkLoads}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController.setBlockNetworkLoads}
   static Future<void> setBlockNetworkLoads(bool flag) =>
       PlatformServiceWorkerController.static().setBlockNetworkLoads(flag);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformServiceWorkerController.setCacheMode}
+  ///{@macro webview_inapp_platform_interface.PlatformServiceWorkerController.setCacheMode}
   static Future<void> setCacheMode(CacheMode mode) =>
       PlatformServiceWorkerController.static().setCacheMode(mode);
 }

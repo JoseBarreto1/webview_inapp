@@ -3,17 +3,17 @@ import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 import '../find_interaction/find_interaction_controller.dart';
 import '../webview_environment/webview_environment.dart';
 import 'in_app_webview_controller.dart';
 import '../pull_to_refresh/pull_to_refresh_controller.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView}
+///{@macro webview_inapp_platform_interface.PlatformHeadlessInAppWebView}
 class HeadlessInAppWebView {
   /// Constructs a [HeadlessInAppWebView].
   ///
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView}
+  ///{@macro webview_inapp_platform_interface.PlatformHeadlessInAppWebView}
   HeadlessInAppWebView.fromPlatformCreationParams({
     required PlatformHeadlessInAppWebViewCreationParams params,
   }) : this.fromPlatform(platform: PlatformHeadlessInAppWebView(params));
@@ -24,10 +24,10 @@ class HeadlessInAppWebView {
   /// Implementation of [PlatformHeadlessInAppWebView] for the current platform.
   final PlatformHeadlessInAppWebView platform;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.id}
+  ///{@macro webview_inapp_platform_interface.PlatformHeadlessInAppWebView.id}
   String get id => platform.id;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.webViewController}
+  ///{@macro webview_inapp_platform_interface.PlatformHeadlessInAppWebView.webViewController}
   InAppWebViewController? get webViewController {
     final webViewControllerPlatform = platform.webViewController;
     if (webViewControllerPlatform == null) {
@@ -638,18 +638,18 @@ class HeadlessInAppWebView {
               : null,
         ));
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.run}
+  ///{@macro webview_inapp_platform_interface.PlatformHeadlessInAppWebView.run}
   Future<void> run() => platform.run();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.isRunning}
+  ///{@macro webview_inapp_platform_interface.PlatformHeadlessInAppWebView.isRunning}
   bool isRunning() => platform.isRunning();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.setSize}
+  ///{@macro webview_inapp_platform_interface.PlatformHeadlessInAppWebView.setSize}
   Future<void> setSize(Size size) => platform.setSize(size);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.getSize}
+  ///{@macro webview_inapp_platform_interface.PlatformHeadlessInAppWebView.getSize}
   Future<Size?> getSize() => platform.getSize();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.dispose}
+  ///{@macro webview_inapp_platform_interface.PlatformHeadlessInAppWebView.dispose}
   Future<void> dispose() => platform.dispose();
 }

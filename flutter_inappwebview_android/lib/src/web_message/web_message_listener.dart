@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 /// Object specifying creation parameters for creating a [AndroidWebMessageListener].
 ///
@@ -36,7 +36,7 @@ class AndroidWebMessageListenerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformWebMessageListener}
+///{@macro webview_inapp_platform_interface.PlatformWebMessageListener}
 class AndroidWebMessageListener extends PlatformWebMessageListener
     with ChannelController {
   /// Constructs a [AndroidWebMessageListener].
@@ -136,7 +136,7 @@ class AndroidJavaScriptReplyProxyCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.JavaScriptReplyProxy}
+///{@macro webview_inapp_platform_interface.JavaScriptReplyProxy}
 class AndroidJavaScriptReplyProxy extends PlatformJavaScriptReplyProxy {
   /// Constructs a [AndroidWebMessageListener].
   AndroidJavaScriptReplyProxy(PlatformJavaScriptReplyProxyCreationParams params)

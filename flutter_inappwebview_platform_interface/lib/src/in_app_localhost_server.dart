@@ -30,7 +30,7 @@ class DefaultInAppLocalhostServerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer}
+///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer}
 class DefaultInAppLocalhostServer extends PlatformInAppLocalhostServer {
   bool _started = false;
   HttpServer? _server;

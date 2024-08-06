@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformProcessGlobalConfig}
+///{@macro webview_inapp_platform_interface.PlatformProcessGlobalConfig}
 class ProcessGlobalConfig {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformProcessGlobalConfig}
+  ///{@macro webview_inapp_platform_interface.PlatformProcessGlobalConfig}
   ProcessGlobalConfig()
       : this.fromPlatformCreationParams(
           const PlatformProcessGlobalConfigCreationParams(),
@@ -32,7 +32,7 @@ class ProcessGlobalConfig {
     return _instance!;
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformProcessGlobalConfig.apply}
+  ///{@macro webview_inapp_platform_interface.PlatformProcessGlobalConfig.apply}
   Future<void> apply({required ProcessGlobalConfigSettings settings}) =>
       platform.apply(settings: settings);
 }

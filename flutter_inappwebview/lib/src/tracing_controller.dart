@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformTracingController}
+///{@macro webview_inapp_platform_interface.PlatformTracingController}
 class TracingController {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformTracingController}
+  ///{@macro webview_inapp_platform_interface.PlatformTracingController}
   TracingController()
       : this.fromPlatformCreationParams(
           const PlatformTracingControllerCreationParams(),
@@ -32,13 +32,13 @@ class TracingController {
     return _instance!;
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformTracingController.start}
+  ///{@macro webview_inapp_platform_interface.PlatformTracingController.start}
   Future<void> start({required TracingSettings settings}) =>
       platform.start(settings: settings);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformTracingController.stop}
+  ///{@macro webview_inapp_platform_interface.PlatformTracingController.stop}
   Future<bool> stop({String? filePath}) => platform.stop(filePath: filePath);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformTracingController.isTracing}
+  ///{@macro webview_inapp_platform_interface.PlatformTracingController.isTracing}
   Future<bool> isTracing() => platform.isTracing();
 }

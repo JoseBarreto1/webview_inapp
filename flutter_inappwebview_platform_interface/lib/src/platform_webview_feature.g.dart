@@ -6,7 +6,7 @@ part of 'platform_webview_feature.dart';
 // ExchangeableEnumGenerator
 // **************************************************************************
 
-///{@macro flutter_inappwebview_platform_interface.PlatformWebViewFeature}
+///{@macro webview_inapp_platform_interface.PlatformWebViewFeature}
 class WebViewFeature {
   final String _value;
   final String _nativeValue;
@@ -317,11 +317,11 @@ class WebViewFeature {
     return null;
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebViewFeature.isFeatureSupported}
+  ///{@macro webview_inapp_platform_interface.PlatformWebViewFeature.isFeatureSupported}
   static Future<bool> isFeatureSupported(WebViewFeature feature) =>
       PlatformWebViewFeature.static().isFeatureSupported(feature);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebViewFeature.isStartupFeatureSupported}
+  ///{@macro webview_inapp_platform_interface.PlatformWebViewFeature.isStartupFeatureSupported}
   static Future<bool> isStartupFeatureSupported(
           WebViewFeature startupFeature) =>
       PlatformWebViewFeature.static().isStartupFeatureSupported(startupFeature);

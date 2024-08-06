@@ -15,7 +15,7 @@ class PlatformWebViewEnvironmentCreationParams {
   /// Used by the platform implementation to create a new [PlatformWebViewEnvironment].
   const PlatformWebViewEnvironmentCreationParams({this.settings});
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebViewEnvironment.settings}
+  ///{@macro webview_inapp_platform_interface.PlatformWebViewEnvironment.settings}
   final WebViewEnvironmentSettings? settings;
 }
 
@@ -73,18 +73,18 @@ abstract class PlatformWebViewEnvironment extends PlatformInterface
   /// The parameters used to initialize the [PlatformWebViewEnvironment].
   final PlatformWebViewEnvironmentCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewEnvironment.id}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewEnvironment.id}
   /// WebView Environment ID.
   ///{@endtemplate}
   String get id =>
       throw UnimplementedError('id is not implemented on the current platform');
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewEnvironment.settings}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewEnvironment.settings}
   /// WebView Environment settings.
   ///{@endtemplate}
   WebViewEnvironmentSettings? get settings => params.settings;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewEnvironment.create}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewEnvironment.create}
   ///Creates the [PlatformWebViewEnvironment] using [settings].
   ///
   ///Check https://learn.microsoft.com/en-us/microsoft-edge/webview2/reference/win32/webview2-idl?view=webview2-1.0.2210.55#createcorewebview2environmentwithoptions
@@ -99,7 +99,7 @@ abstract class PlatformWebViewEnvironment extends PlatformInterface
         'create is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewEnvironment.getAvailableVersion}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewEnvironment.getAvailableVersion}
   ///Get the browser version info including channel name if it is not the WebView2 Runtime.
   ///
   ///Channel names are Beta, Dev, and Canary.
@@ -115,7 +115,7 @@ abstract class PlatformWebViewEnvironment extends PlatformInterface
         'getAvailableVersion is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewEnvironment.compareBrowserVersions}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewEnvironment.compareBrowserVersions}
   ///This method is for anyone want to compare version correctly to determine which version is newer, older or same.
   ///
   ///Use it to determine whether to use webview2 or certain feature based upon version.
@@ -132,7 +132,7 @@ abstract class PlatformWebViewEnvironment extends PlatformInterface
         'compareBrowserVersions is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewEnvironment.dispose}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewEnvironment.dispose}
   ///Disposes the WebView Environment reference.
   ///{@endtemplate}
   Future<void> dispose() {

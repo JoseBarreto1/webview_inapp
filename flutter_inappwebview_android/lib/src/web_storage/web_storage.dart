@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 import '../in_app_webview/in_app_webview_controller.dart';
 
@@ -25,7 +25,7 @@ class AndroidWebStorageCreationParams extends PlatformWebStorageCreationParams {
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformWebStorage}
+///{@macro webview_inapp_platform_interface.PlatformWebStorage}
 class AndroidWebStorage extends PlatformWebStorage {
   /// Constructs a [AndroidWebStorage].
   AndroidWebStorage(PlatformWebStorageCreationParams params)
@@ -69,7 +69,7 @@ class AndroidStorageCreationParams extends PlatformStorageCreationParams {
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformStorage}
+///{@macro webview_inapp_platform_interface.PlatformStorage}
 abstract class AndroidStorage implements PlatformStorage {
   @override
   AndroidInAppWebViewController? controller;
@@ -187,7 +187,7 @@ class AndroidLocalStorageCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformLocalStorage}
+///{@macro webview_inapp_platform_interface.PlatformLocalStorage}
 class AndroidLocalStorage extends PlatformLocalStorage with AndroidStorage {
   /// Constructs a [AndroidLocalStorage].
   AndroidLocalStorage(PlatformLocalStorageCreationParams params)
@@ -231,7 +231,7 @@ class AndroidSessionStorageCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformSessionStorage}
+///{@macro webview_inapp_platform_interface.PlatformSessionStorage}
 class AndroidSessionStorage extends PlatformSessionStorage with AndroidStorage {
   /// Constructs a [AndroidSessionStorage].
   AndroidSessionStorage(PlatformSessionStorageCreationParams params)

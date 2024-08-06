@@ -151,7 +151,7 @@ class PlatformHeadlessInAppWebViewCreationParams
   final PlatformWebViewEnvironment? webViewEnvironment;
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView}
+///{@template webview_inapp_platform_interface.PlatformHeadlessInAppWebView}
 ///Class that represents a WebView in headless mode.
 ///It can be used to run a WebView in background without attaching an `InAppWebView` to the widget tree.
 ///
@@ -195,20 +195,20 @@ abstract class PlatformHeadlessInAppWebView extends PlatformInterface
   /// The parameters used to initialize the [PlatformHeadlessInAppWebView].
   final PlatformHeadlessInAppWebViewCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.id}
+  ///{@template webview_inapp_platform_interface.PlatformHeadlessInAppWebView.id}
   ///View ID.
   ///{@endtemplate}
   String get id =>
       throw UnimplementedError('id is not implemented on the current platform');
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.webViewController}
+  ///{@template webview_inapp_platform_interface.PlatformHeadlessInAppWebView.webViewController}
   ///WebView Controller that can be used to access the [InAppWebViewController] API.
   ///{@endtemplate}
   PlatformInAppWebViewController? get webViewController =>
       throw UnimplementedError(
           'webViewController is not implemented on the current platform');
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.run}
+  ///{@template webview_inapp_platform_interface.PlatformHeadlessInAppWebView.run}
   ///Runs the headless WebView.
   ///
   ///**NOTE for Web**: it will append a new `iframe` to the body.
@@ -223,7 +223,7 @@ abstract class PlatformHeadlessInAppWebView extends PlatformInterface
     throw UnimplementedError('run is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.isRunning}
+  ///{@template webview_inapp_platform_interface.PlatformHeadlessInAppWebView.isRunning}
   ///Indicates if the headless WebView is running or not.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -237,7 +237,7 @@ abstract class PlatformHeadlessInAppWebView extends PlatformInterface
         'isRunning is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.setSize}
+  ///{@template webview_inapp_platform_interface.PlatformHeadlessInAppWebView.setSize}
   ///Set the size of the WebView in pixels.
   ///
   ///Set `-1` to match the corresponding width or height of the current device screen size.
@@ -258,7 +258,7 @@ abstract class PlatformHeadlessInAppWebView extends PlatformInterface
         'setSize is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.getSize}
+  ///{@template webview_inapp_platform_interface.PlatformHeadlessInAppWebView.getSize}
   ///Gets the current size in pixels of the WebView.
   ///
   ///Note that if the [PlatformHeadlessInAppWebView] is not running, this method will return `null`.
@@ -274,7 +274,7 @@ abstract class PlatformHeadlessInAppWebView extends PlatformInterface
         'getSize is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView.dispose}
+  ///{@template webview_inapp_platform_interface.PlatformHeadlessInAppWebView.dispose}
   ///Disposes the headless WebView.
   ///
   ///**Officially Supported Platforms/Implementations**:

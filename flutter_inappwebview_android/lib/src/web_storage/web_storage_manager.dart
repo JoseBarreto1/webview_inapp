@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 /// Object specifying creation parameters for creating a [AndroidWebStorageManager].
 ///
@@ -26,7 +26,7 @@ class AndroidWebStorageManagerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformWebStorageManager}
+///{@macro webview_inapp_platform_interface.PlatformWebStorageManager}
 class AndroidWebStorageManager extends PlatformWebStorageManager
     with ChannelController {
   /// Creates a new [AndroidWebStorageManager].

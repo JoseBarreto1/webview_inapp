@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 import '../find_interaction/find_interaction_controller.dart';
 import '../pull_to_refresh/pull_to_refresh_controller.dart';
 import 'in_app_webview_controller.dart';
@@ -249,7 +249,7 @@ class AndroidHeadlessInAppWebViewCreationParams
   final AndroidPullToRefreshController? pullToRefreshController;
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformHeadlessInAppWebView}
+///{@macro webview_inapp_platform_interface.PlatformHeadlessInAppWebView}
 class AndroidHeadlessInAppWebView extends PlatformHeadlessInAppWebView
     with ChannelController {
   @override

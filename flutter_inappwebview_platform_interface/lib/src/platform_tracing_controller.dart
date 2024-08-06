@@ -18,7 +18,7 @@ class PlatformTracingControllerCreationParams {
   const PlatformTracingControllerCreationParams();
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformTracingController}
+///{@template webview_inapp_platform_interface.PlatformTracingController}
 ///Manages tracing of `WebView`s.
 ///In particular provides functionality for the app to enable/disable tracing of parts of code and to collect tracing data.
 ///This is useful for profiling performance issues, debugging and memory usage analysis in production and real life scenarios.
@@ -59,7 +59,7 @@ abstract class PlatformTracingController extends PlatformInterface {
   /// The parameters used to initialize the [PlatformTracingController].
   final PlatformTracingControllerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformTracingController.start}
+  ///{@template webview_inapp_platform_interface.PlatformTracingController.start}
   ///Starts tracing all `WebView`s.
   ///Depending on the trace mode in trace config specifies how the trace events are recorded.
   ///For tracing modes [TracingMode.RECORD_UNTIL_FULL] and [TracingMode.RECORD_CONTINUOUSLY]
@@ -74,7 +74,7 @@ abstract class PlatformTracingController extends PlatformInterface {
         'start is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformTracingController.stop}
+  ///{@template webview_inapp_platform_interface.PlatformTracingController.stop}
   ///Stops tracing and flushes tracing data to the specified output stream.
   ///The data is sent to the specified output stream in json format typically in
   ///chunks.
@@ -89,7 +89,7 @@ abstract class PlatformTracingController extends PlatformInterface {
     throw UnimplementedError('stop is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformTracingController.isTracing}
+  ///{@template webview_inapp_platform_interface.PlatformTracingController.isTracing}
   ///Returns whether the WebView framework is tracing.
   ///
   ///**Officially Supported Platforms/Implementations**:

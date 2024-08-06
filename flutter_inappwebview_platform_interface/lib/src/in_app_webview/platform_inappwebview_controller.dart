@@ -37,10 +37,10 @@ class PlatformInAppWebViewControllerCreationParams {
   const PlatformInAppWebViewControllerCreationParams(
       {required this.id, this.webviewParams});
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.id}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppWebViewController.id}
   final dynamic id;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppWebViewController.webviewParams}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppWebViewController.webviewParams}
   final PlatformWebViewCreationParams? webviewParams;
 }
 
@@ -106,23 +106,23 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
   /// The parameters used to initialize the [PlatformInAppWebViewController].
   final PlatformInAppWebViewControllerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.id}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.id}
   /// WebView ID.
   ///{@endtemplate}
   dynamic get id => params.id;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.webviewParams}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.webviewParams}
   /// WebView params.
   ///{@endtemplate}
   PlatformWebViewCreationParams? get webviewParams => params.webviewParams;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.webStorage}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.webStorage}
   ///Provides access to the JavaScript [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API): `window.sessionStorage` and `window.localStorage`.
   ///{@endtemplate}
   PlatformWebStorage get webStorage => throw UnimplementedError(
       'webStorage is not implemented on the current platform');
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getUrl}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getUrl}
   ///Gets the URL for the current page.
   ///This is not always the same as the URL passed to [PlatformWebViewCreationParams.onLoadStart] because although the load for that URL has begun, the current page may not have changed.
   ///
@@ -141,7 +141,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getUrl is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getTitle}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getTitle}
   ///Gets the title for the current page.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -158,7 +158,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getTitle is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getProgress}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getProgress}
   ///Gets the progress for the current page. The progress value is between 0 and 100.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -171,7 +171,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getProgress is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getHtml}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getHtml}
   ///Gets the content html of the page. It first tries to get the content through javascript.
   ///If this doesn't work, it tries to get the content reading the file:
   ///- checking if it is an asset (`file:///`) or
@@ -190,7 +190,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getHtml is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getFavicons}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getFavicons}
   ///Gets the list of all favicons for the current page.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -206,7 +206,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getFavicons is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.loadUrl}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.loadUrl}
   ///Loads the given [urlRequest].
   ///
   ///- [allowingReadAccessTo], used in combination with [urlRequest] (using the `file://` scheme),
@@ -237,7 +237,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'loadUrl is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.postUrl}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.postUrl}
   ///Loads the given [url] with [postData] (x-www-form-urlencoded) using `POST` method into this WebView.
   ///
   ///Example:
@@ -259,7 +259,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'postUrl is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.loadData}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.loadData}
   ///Loads the given [data] into this WebView, using [baseUrl] as the base URL for the content.
   ///
   ///- [mimeType] argument specifies the format of the data. The default value is `"text/html"`.
@@ -297,7 +297,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'loadData is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.loadFile}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.loadFile}
   ///Loads the given [assetFilePath].
   ///
   ///To be able to load your local files (assets, js, css, etc.), you need to add them in the `assets` section of the `pubspec.yaml` file, otherwise they cannot be found!
@@ -340,7 +340,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'loadFile is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.reload}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.reload}
   ///Reloads the WebView.
   ///
   ///**NOTE for Web**: if `window.location.reload()` is not accessible inside the iframe, it will reload using the iframe `src` attribute.
@@ -357,7 +357,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'reload is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.goBack}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.goBack}
   ///Goes back in the history of the WebView.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -374,7 +374,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'goBack is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.canGoBack}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.canGoBack}
   ///Returns a boolean value indicating whether the WebView can move backward.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -388,7 +388,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'canGoBack is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.goForward}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.goForward}
   ///Goes forward in the history of the WebView.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -405,7 +405,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'goForward is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.canGoForward}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.canGoForward}
   ///Returns a boolean value indicating whether the WebView can move forward.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -419,7 +419,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'canGoForward is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.goBackOrForward}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.goBackOrForward}
   ///Goes to the history item that is the number of steps away from the current item. Steps is negative if backward and positive if forward.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -436,7 +436,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'goBackOrForward is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.canGoBackOrForward}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.canGoBackOrForward}
   ///Returns a boolean value indicating whether the WebView can go back or forward the given number of steps. Steps is negative if backward and positive if forward.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -450,7 +450,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'canGoBackOrForward is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.goTo}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.goTo}
   ///Navigates to a [WebHistoryItem] from the back-forward [WebHistory.list] and sets it as the current item.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -466,7 +466,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
     throw UnimplementedError('goTo is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.isLoading}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.isLoading}
   ///Check if the WebView instance is in a loading state.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -481,7 +481,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'isLoading is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.stopLoading}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.stopLoading}
   ///Stops the WebView from loading.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -498,7 +498,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'stopLoading is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.evaluateJavascript}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.evaluateJavascript}
   ///Evaluates JavaScript [source] code into the WebView and returns the result of the evaluation.
   ///
   ///[contentWorld], on iOS, it represents the namespace in which to evaluate the JavaScript [source] code.
@@ -529,7 +529,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'evaluateJavascript is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.injectJavascriptFileFromUrl}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.injectJavascriptFileFromUrl}
   ///Injects an external JavaScript file into the WebView from a defined url.
   ///
   ///[scriptHtmlTagAttributes] represents the possible the `<script>` HTML attributes to be set.
@@ -554,7 +554,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'injectJavascriptFileFromUrl is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.injectJavascriptFileFromAsset}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.injectJavascriptFileFromAsset}
   ///Evaluates the content of a JavaScript file into the WebView from the flutter assets directory.
   ///
   ///**NOTE**: This method shouldn't be called in the [PlatformWebViewCreationParams.onWebViewCreated] or [PlatformWebViewCreationParams.onLoadStart] events,
@@ -577,7 +577,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'injectJavascriptFileFromAsset is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.injectCSSCode}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.injectCSSCode}
   ///Injects CSS into the WebView.
   ///
   ///**NOTE**: This method shouldn't be called in the [PlatformWebViewCreationParams.onWebViewCreated] or [PlatformWebViewCreationParams.onLoadStart] events,
@@ -598,7 +598,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'injectCSSCode is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.injectCSSFileFromUrl}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.injectCSSFileFromUrl}
   ///Injects an external CSS file into the WebView from a defined url.
   ///
   ///[cssLinkHtmlTagAttributes] represents the possible CSS stylesheet `<link>` HTML attributes to be set.
@@ -623,7 +623,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'injectCSSFileFromUrl is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.injectCSSFileFromAsset}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.injectCSSFileFromAsset}
   ///Injects a CSS file into the WebView from the flutter assets directory.
   ///
   ///**NOTE**: This method shouldn't be called in the [PlatformWebViewCreationParams.onWebViewCreated] or [PlatformWebViewCreationParams.onLoadStart] events,
@@ -644,7 +644,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'injectCSSFileFromAsset is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.addJavaScriptHandler}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.addJavaScriptHandler}
   ///Adds a JavaScript message handler [callback] ([JavaScriptHandlerCallback]) that listen to post messages sent from JavaScript by the handler with name [handlerName].
   ///
   ///The Android implementation uses [addJavascriptInterface](https://developer.android.com/reference/android/webkit/WebView#addJavascriptInterface(java.lang.Object,%20java.lang.String)).
@@ -708,7 +708,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'addJavaScriptHandler is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.removeJavaScriptHandler}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.removeJavaScriptHandler}
   ///Removes a JavaScript message handler previously added with the [addJavaScriptHandler] associated to [handlerName] key.
   ///Returns the value associated with [handlerName] before it was removed.
   ///Returns `null` if [handlerName] was not found.
@@ -724,7 +724,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'removeJavaScriptHandler is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.hasJavaScriptHandler}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.hasJavaScriptHandler}
   ///Returns `true` if a JavaScript handler with [handlerName] already exists, otherwise `false`.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -737,7 +737,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'hasJavaScriptHandler is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.takeScreenshot}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.takeScreenshot}
   ///Takes a screenshot of the WebView's visible viewport and returns a [Uint8List]. Returns `null` if it wasn't be able to take it.
   ///
   ///[screenshotConfiguration] represents the configuration data to use when generating an image from a web view’s contents.
@@ -758,7 +758,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'takeScreenshot is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.setSettings}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.setSettings}
   ///Sets the WebView settings with the new [settings] and evaluates them.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -772,7 +772,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setSettings is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getSettings}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getSettings}
   ///Gets the current WebView settings. Returns `null` if it wasn't able to get them.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -786,7 +786,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getSettings is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getCopyBackForwardList}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getCopyBackForwardList}
   ///Gets the WebHistory for this WebView. This contains the back/forward list for use in querying each item in the history stack.
   ///This contains only a snapshot of the current state.
   ///Multiple calls to this method may return different objects.
@@ -803,7 +803,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getCopyBackForwardList is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.clearCache}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.clearCache}
   ///Use [PlatformInAppWebViewController.clearAllCache] instead
   ///{@endtemplate}
   @Deprecated("Use InAppWebViewController.clearAllCache instead")
@@ -812,7 +812,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'clearCache is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.scrollTo}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.scrollTo}
   ///Scrolls the WebView to the position.
   ///
   ///[x] represents the x position to scroll to.
@@ -837,7 +837,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'scrollTo is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.scrollBy}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.scrollBy}
   ///Moves the scrolled position of the WebView.
   ///
   ///[x] represents the amount of pixels to scroll by horizontally.
@@ -862,7 +862,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'scrollBy is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.pauseTimers}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.pauseTimers}
   ///On Android native WebView, it pauses all layout, parsing, and JavaScript timers for all WebViews.
   ///This is a global requests, not restricted to just this WebView. This can be useful if the application has been paused.
   ///
@@ -880,7 +880,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'pauseTimers is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.resumeTimers}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.resumeTimers}
   ///On Android, it resumes all layout, parsing, and JavaScript timers for all WebViews. This will resume dispatching all timers.
   ///
   ///**NOTE for iOS**: it is implemented using JavaScript and it is restricted to just this WebView.
@@ -897,7 +897,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'resumeTimers is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.printCurrentPage}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.printCurrentPage}
   ///Prints the current page.
   ///
   ///To obtain the [PlatformPrintJobController], use [settings] argument with [PrintJobSettings.handledByClient] to `true`.
@@ -921,7 +921,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'printCurrentPage is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getContentHeight}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getContentHeight}
   ///Gets the height of the HTML content.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -939,7 +939,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getContentHeight is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getContentWidth}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getContentWidth}
   ///Gets the width of the HTML content.
   ///
   ///**NOTE for Android**: it is implemented using JavaScript.
@@ -959,7 +959,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getContentWidth is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.zoomBy}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.zoomBy}
   ///Performs a zoom operation in this WebView.
   ///
   ///[zoomFactor] represents the zoom factor to apply. On Android, the zoom factor will be clamped to the Webview's zoom limits and, also, this value must be in the range 0.01 (excluded) to 100.0 (included).
@@ -981,7 +981,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'zoomBy is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getOriginalUrl}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getOriginalUrl}
   ///Gets the URL that was originally requested for the current page.
   ///This is not always the same as the URL passed to [InAppWebView.onLoadStart] because although the load for that URL has begun,
   ///the current page may not have changed. Also, there may have been redirects resulting in a different URL to that originally requested.
@@ -999,7 +999,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getOriginalUrl is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getZoomScale}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getZoomScale}
   ///Gets the current zoom scale of the WebView.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1011,7 +1011,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getZoomScale is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getSelectedText}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getSelectedText}
   ///Gets the selected text.
   ///
   ///**NOTE**: this method is implemented with using JavaScript.
@@ -1031,7 +1031,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getSelectedText is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getHitTestResult}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getHitTestResult}
   ///Gets the hit result for hitting an HTML elements.
   ///
   ///**NOTE**: On iOS, it is implemented using JavaScript.
@@ -1045,7 +1045,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getHitTestResult is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.clearFocus}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.clearFocus}
   ///Clears the current focus. On iOS and Android native WebView, it will clear also, for example, the current text selection.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1057,7 +1057,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'clearFocus is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.setContextMenu}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.setContextMenu}
   ///Sets or updates the WebView context menu to be used next time it will appear.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1069,7 +1069,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setContextMenu is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.requestFocusNodeHref}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.requestFocusNodeHref}
   ///Requests the anchor or image element URL at the last tapped point.
   ///
   ///**NOTE**: On iOS, it is implemented using JavaScript.
@@ -1083,7 +1083,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'requestFocusNodeHref is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.requestImageRef}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.requestImageRef}
   ///Requests the URL of the image last touched by the user.
   ///
   ///**NOTE**: On iOS, it is implemented using JavaScript.
@@ -1097,7 +1097,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'requestImageRef is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getMetaTags}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getMetaTags}
   ///Returns the list of `<meta>` tags of the current WebView.
   ///
   ///**NOTE**: It is implemented using JavaScript.
@@ -1115,7 +1115,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getMetaTags is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getMetaThemeColor}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getMetaThemeColor}
   ///Returns an instance of [Color] representing the `content` value of the
   ///`<meta name="theme-color" content="">` tag of the current WebView, if available, otherwise `null`.
   ///
@@ -1134,7 +1134,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getMetaThemeColor is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getScrollX}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getScrollX}
   ///Returns the scrolled left position of the current WebView.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -1152,7 +1152,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getScrollX is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getScrollY}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getScrollY}
   ///Returns the scrolled top position of the current WebView.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -1170,7 +1170,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getScrollY is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getCertificate}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getCertificate}
   ///Gets the SSL certificate for the main top-level page or null if there is no certificate (the site is not secure).
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1183,7 +1183,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getCertificate is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.addUserScript}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.addUserScript}
   ///Injects the specified [userScript] into the webpage’s content.
   ///
   ///**NOTE for iOS and MacOS**: this method will throw an error if the [PlatformWebViewCreationParams.windowId] has been set.
@@ -1201,7 +1201,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'addUserScript is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.addUserScripts}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.addUserScripts}
   ///Injects the [userScripts] into the webpage’s content.
   ///
   ///**NOTE for iOS and MacOS**: this method will throw an error if the [PlatformWebViewCreationParams.windowId] has been set.
@@ -1219,7 +1219,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'addUserScripts is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.removeUserScript}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.removeUserScript}
   ///Removes the specified [userScript] from the webpage’s content.
   ///User scripts already loaded into the webpage's content cannot be removed. This will have effect only on the next page load.
   ///Returns `true` if [userScript] was in the list, `false` otherwise.
@@ -1239,7 +1239,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'removeUserScript is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.removeUserScriptsByGroupName}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.removeUserScriptsByGroupName}
   ///Removes all the [UserScript]s with [groupName] as group name from the webpage’s content.
   ///User scripts already loaded into the webpage's content cannot be removed. This will have effect only on the next page load.
   ///
@@ -1258,7 +1258,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'removeUserScriptsByGroupName is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.removeUserScripts}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.removeUserScripts}
   ///Removes the [userScripts] from the webpage’s content.
   ///User scripts already loaded into the webpage's content cannot be removed. This will have effect only on the next page load.
   ///
@@ -1277,7 +1277,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'removeUserScripts is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.removeAllUserScripts}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.removeAllUserScripts}
   ///Removes all the user scripts from the webpage’s content.
   ///
   ///**NOTE for iOS and MacOS**: this method will throw an error if the [PlatformWebViewCreationParams.windowId] has been set.
@@ -1295,7 +1295,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'removeAllUserScripts is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.hasUserScript}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.hasUserScript}
   ///Returns `true` if the [userScript] has been already added, otherwise `false`.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1309,7 +1309,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'hasUserScript is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.callAsyncJavaScript}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.callAsyncJavaScript}
   ///Executes the specified string as an asynchronous JavaScript function.
   ///
   ///[functionBody] is the JavaScript string to use as the function body.
@@ -1353,7 +1353,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'callAsyncJavaScript is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.saveWebArchive}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.saveWebArchive}
   ///Saves the current WebView as a web archive.
   ///Returns the file path under which the web archive file was saved, or `null` if saving the file failed.
   ///
@@ -1379,7 +1379,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'saveWebArchive is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.isSecureContext}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.isSecureContext}
   ///Indicates whether the webpage context is capable of using features that require [secure contexts](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts).
   ///This is implemented using Javascript (see [window.isSecureContext](https://developer.mozilla.org/en-US/docs/Web/API/Window/isSecureContext)).
   ///
@@ -1398,7 +1398,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'isSecureContext is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.createWebMessageChannel}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.createWebMessageChannel}
   ///Creates a message channel to communicate with JavaScript and returns the message channel with ports that represent the endpoints of this message channel.
   ///The HTML5 message channel functionality is described [here](https://html.spec.whatwg.org/multipage/comms.html#messagechannel).
   ///
@@ -1422,7 +1422,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'createWebMessageChannel is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.postWebMessage}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.postWebMessage}
   ///Post a message to main frame. The embedded application can restrict the messages to a certain target origin.
   ///See [HTML5 spec](https://html.spec.whatwg.org/multipage/comms.html#posting-messages) for how target origin can be used.
   ///
@@ -1445,7 +1445,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'postWebMessage is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.addWebMessageListener}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.addWebMessageListener}
   ///Adds a [PlatformWebMessageListener] to the WebView and injects a JavaScript object into each frame that the [PlatformWebMessageListener] will listen on.
   ///
   ///The injected JavaScript object will be named [PlatformWebMessageListener.jsObjectName] in the global scope.
@@ -1617,7 +1617,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'addWebMessageListener is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.hasWebMessageListener}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.hasWebMessageListener}
   ///Returns `true` if the [webMessageListener] has been already added, otherwise `false`.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1630,7 +1630,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'hasWebMessageListener is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.canScrollVertically}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.canScrollVertically}
   ///Returns `true` if the webpage can scroll vertically, otherwise `false`.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -1648,7 +1648,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'canScrollVertically is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.canScrollHorizontally}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.canScrollHorizontally}
   ///Returns `true` if the webpage can scroll horizontally, otherwise `false`.
   ///
   ///**NOTE for Web**: this method will have effect only if the iframe has the same origin.
@@ -1666,7 +1666,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'canScrollHorizontally is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.startSafeBrowsing}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.startSafeBrowsing}
   ///Starts Safe Browsing initialization.
   ///
   ///URL loads are not guaranteed to be protected by Safe Browsing until after the this method returns true.
@@ -1685,7 +1685,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'startSafeBrowsing is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.clearSslPreferences}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.clearSslPreferences}
   ///Clears the SSL preferences table stored in response to proceeding with SSL certificate errors.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1696,7 +1696,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'clearSslPreferences is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.pause}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.pause}
   ///Does a best-effort attempt to pause any processing that can be paused safely, such as animations and geolocation. Note that this call does not pause JavaScript.
   ///To pause JavaScript globally, use [PlatformInAppWebViewController.pauseTimers]. To resume WebView, call [resume].
   ///
@@ -1708,7 +1708,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'pause is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.resume}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.resume}
   ///Resumes a WebView after a previous call to [pause].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1719,7 +1719,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'resume is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.pageDown}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.pageDown}
   ///Scrolls the contents of this WebView down by half the page size.
   ///Returns `true` if the page was scrolled.
   ///
@@ -1733,7 +1733,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'pageDown is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.pageUp}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.pageUp}
   ///Scrolls the contents of this WebView up by half the view size.
   ///Returns `true` if the page was scrolled.
   ///
@@ -1747,7 +1747,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'pageUp is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.zoomIn}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.zoomIn}
   ///Performs zoom in in this WebView.
   ///Returns `true` if zoom in succeeds, `false` if no zoom changes.
   ///
@@ -1759,7 +1759,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'zoomIn is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.zoomOut}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.zoomOut}
   ///Performs zoom out in this WebView.
   ///Returns `true` if zoom out succeeds, `false` if no zoom changes.
   ///
@@ -1771,7 +1771,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'zoomOut is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.clearHistory}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.clearHistory}
   ///Clears the internal back/forward list.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1782,7 +1782,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'clearHistory is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.clearFormData}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.clearFormData}
   ///Removes the autocomplete popup from the currently focused form field, if present.
   ///Note this only affects the display of the autocomplete popup,
   ///it does not remove any saved form data from this WebView's store.
@@ -1795,7 +1795,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'clearFormData is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.reloadFromOrigin}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.reloadFromOrigin}
   ///Reloads the current page, performing end-to-end revalidation using cache-validating conditionals if possible.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1807,7 +1807,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'reloadFromOrigin is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.createPdf}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.createPdf}
   ///Generates PDF data from the web view’s contents asynchronously.
   ///Returns `null` if a problem occurred.
   ///
@@ -1830,7 +1830,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'createPdf is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.createWebArchiveData}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.createWebArchiveData}
   ///Creates a web archive of the web view’s current contents asynchronously.
   ///Returns `null` if a problem occurred.
   ///
@@ -1847,7 +1847,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'createWebArchiveData is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.hasOnlySecureContent}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.hasOnlySecureContent}
   ///A Boolean value indicating whether all resources on the page have been loaded over securely encrypted connections.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1859,7 +1859,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'hasOnlySecureContent is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.pauseAllMediaPlayback}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.pauseAllMediaPlayback}
   ///Pauses playback of all media in the web view.
   ///
   ///**NOTE for iOS**: available on iOS 15.0+.
@@ -1875,7 +1875,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'pauseAllMediaPlayback is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.setAllMediaPlaybackSuspended}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.setAllMediaPlaybackSuspended}
   ///Changes whether the webpage is suspending playback of all media in the page.
   ///Pass `true` to pause all media the web view is playing. Neither the user nor the webpage can resume playback until you call this method again with `false`.
   ///
@@ -1894,7 +1894,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setAllMediaPlaybackSuspended is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.closeAllMediaPresentations}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.closeAllMediaPresentations}
   ///Closes all media the web view is presenting, including picture-in-picture video and fullscreen video.
   ///
   ///**NOTE for iOS**: available on iOS 14.5+.
@@ -1910,7 +1910,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'closeAllMediaPresentations is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.requestMediaPlaybackState}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.requestMediaPlaybackState}
   ///Requests the playback status of media in the web view.
   ///Returns a [MediaPlaybackState] that indicates whether the media in the web view is playing, paused, or suspended.
   ///If there’s no media in the web view to play, this method provides [MediaPlaybackState.NONE].
@@ -1928,7 +1928,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'requestMediaPlaybackState is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.isInFullscreen}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.isInFullscreen}
   ///Returns `true` if the `WebView` is in fullscreen mode, otherwise `false`.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1941,7 +1941,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'isInFullscreen is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getCameraCaptureState}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getCameraCaptureState}
   ///Returns a [MediaCaptureState] that indicates whether the webpage is using the camera to capture images or video.
   ///
   ///**NOTE for iOS**: available on iOS 15.0+.
@@ -1957,7 +1957,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getCameraCaptureState is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.setCameraCaptureState}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.setCameraCaptureState}
   ///Changes whether the webpage is using the camera to capture images or video.
   ///
   ///**NOTE for iOS**: available on iOS 15.0+.
@@ -1973,7 +1973,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setCameraCaptureState is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getMicrophoneCaptureState}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getMicrophoneCaptureState}
   ///Returns a [MediaCaptureState] that indicates whether the webpage is using the microphone to capture audio.
   ///
   ///**NOTE for iOS**: available on iOS 15.0+.
@@ -1989,7 +1989,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getMicrophoneCaptureState is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.setMicrophoneCaptureState}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.setMicrophoneCaptureState}
   ///Changes whether the webpage is using the microphone to capture audio.
   ///
   ///**NOTE for iOS**: available on iOS 15.0+.
@@ -2005,7 +2005,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setMicrophoneCaptureState is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.loadSimulatedRequest}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.loadSimulatedRequest}
   ///Loads the web content from the data you provide as if the data were the response to the request.
   ///If [urlResponse] is `null`, it loads the web content from the data as an utf8 encoded HTML string as the response to the request.
   ///
@@ -2040,7 +2040,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'loadSimulatedRequest is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.openDevTools}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.openDevTools}
   ///Opens the DevTools window for the current document in the WebView.
   ///Does nothing if run when the DevTools window is already open.
   ///
@@ -2052,7 +2052,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'openDevTools is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.callDevToolsProtocolMethod}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.callDevToolsProtocolMethod}
   ///Runs an asynchronous `DevToolsProtocol` method.
   ///
   ///For more information about available methods, navigate to [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/tot).
@@ -2075,7 +2075,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'callDevToolsProtocolMethod is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.addDevToolsProtocolEventListener}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.addDevToolsProtocolEventListener}
   ///Subscribe to a `DevToolsProtocol` event.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -2087,7 +2087,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'addDevToolsProtocolEventListener is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.removeDevToolsProtocolEventListener}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.removeDevToolsProtocolEventListener}
   ///Remove an event handler previously added with [addDevToolsProtocolEventListener].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -2099,7 +2099,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'removeDevToolsProtocolEventListener is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getIFrameId}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getIFrameId}
   ///Returns the iframe `id` attribute used on the Web platform.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -2110,7 +2110,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getIFrameId is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getViewId}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getViewId}
   ///View ID used internally.
   ///{@endtemplate}
   dynamic getViewId() {
@@ -2118,7 +2118,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getViewId is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getDefaultUserAgent}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getDefaultUserAgent}
   ///Gets the default user agent.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -2131,7 +2131,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getDefaultUserAgent is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.clearClientCertPreferences}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.clearClientCertPreferences}
   ///Clears the client certificate preferences stored in response to proceeding/cancelling client cert requests.
   ///Note that WebView automatically clears these preferences when the system keychain is updated.
   ///The preferences are shared by all the WebViews that are created by the embedder application.
@@ -2148,7 +2148,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'clearClientCertPreferences is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getSafeBrowsingPrivacyPolicyUrl}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getSafeBrowsingPrivacyPolicyUrl}
   ///Returns a URL pointing to the privacy policy for Safe Browsing reporting.
   ///
   ///This method should only be called if [WebViewFeature.isFeatureSupported] returns `true` for [WebViewFeature.SAFE_BROWSING_PRIVACY_POLICY_URL].
@@ -2161,7 +2161,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getSafeBrowsingPrivacyPolicyUrl is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.setSafeBrowsingAllowlist}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.setSafeBrowsingAllowlist}
   ///Sets the list of hosts (domain names/IP addresses) that are exempt from SafeBrowsing checks. The list is global for all the WebViews.
   ///
   /// Each rule should take one of these:
@@ -2186,7 +2186,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setSafeBrowsingAllowlist is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getCurrentWebViewPackage}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getCurrentWebViewPackage}
   ///If WebView has already been loaded into the current process this method will return the package that was used to load it.
   ///Otherwise, the package that would be used if the WebView was loaded right now will be returned;
   ///this does not cause WebView to be loaded, so this information may become outdated at any time.
@@ -2205,7 +2205,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getCurrentWebViewPackage is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.setWebContentsDebuggingEnabled}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.setWebContentsDebuggingEnabled}
   ///Enables debugging of web contents (HTML / CSS / JavaScript) loaded into any WebViews of this application.
   ///This flag can be enabled in order to facilitate debugging of web layouts and JavaScript code running inside WebViews.
   ///Please refer to WebView documentation for the debugging guide. The default is `false`.
@@ -2222,7 +2222,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setWebContentsDebuggingEnabled is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getVariationsHeader}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getVariationsHeader}
   ///Gets the WebView variations encoded to be used as the X-Client-Data HTTP header.
   ///
   ///The app is responsible for adding the X-Client-Data header to any request
@@ -2242,7 +2242,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getVariationsHeader is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.isMultiProcessEnabled}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.isMultiProcessEnabled}
   ///Returns `true` if WebView is running in multi process mode.
   ///
   ///In Android O and above, WebView may run in "multiprocess" mode.
@@ -2261,7 +2261,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'isMultiProcessEnabled is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.disableWebView}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.disableWebView}
   ///Indicate that the current process does not intend to use WebView,
   ///and that an exception should be thrown if a WebView is created or any other
   ///methods in the `android.webkit` package are used.
@@ -2281,7 +2281,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'disableWebView is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.handlesURLScheme}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.handlesURLScheme}
   ///Returns a Boolean value that indicates whether WebKit natively supports resources with the specified URL scheme.
   ///
   ///[urlScheme] represents the URL scheme associated with the resource.
@@ -2299,7 +2299,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'handlesURLScheme is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.disposeKeepAlive}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.disposeKeepAlive}
   ///Disposes the WebView that is using the [keepAlive] instance
   ///for the keep alive feature.
   ///
@@ -2312,7 +2312,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'disposeKeepAlive is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.clearAllCache}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.clearAllCache}
   ///Clears the resource cache. Note that the cache is per-application, so this will clear the cache for all WebViews used.
   ///
   ///[includeDiskFiles] if `false`, only the RAM cache is cleared. The default value is `true`.
@@ -2327,7 +2327,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'clearAllCache is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.tRexRunnerHtml}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.tRexRunnerHtml}
   ///Gets the html (with javascript) of the Chromium's t-rex runner game. Used in combination with [tRexRunnerCss].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -2338,7 +2338,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
   Future<String> get tRexRunnerHtml => throw UnimplementedError(
       'tRexRunnerHtml is not implemented on the current platform');
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.tRexRunnerCss}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.tRexRunnerCss}
   ///Gets the css of the Chromium's t-rex runner game. Used in combination with [tRexRunnerHtml].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -2349,7 +2349,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
   Future<String> get tRexRunnerCss => throw UnimplementedError(
       'tRexRunnerCss is not implemented on the current platform');
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.setOptions}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.setOptions}
   ///Use [setSettings] instead.
   ///{@endtemplate}
   @Deprecated('Use setSettings instead')
@@ -2358,7 +2358,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setOptions is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getOptions}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getOptions}
   ///Use [getSettings] instead.
   ///{@endtemplate}
   @Deprecated('Use getSettings instead')
@@ -2367,7 +2367,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getOptions is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.findAllAsync}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.findAllAsync}
   ///Use [PlatformFindInteractionController.findAll] instead.
   ///{@endtemplate}
   @Deprecated("Use FindInteractionController.findAll instead")
@@ -2376,7 +2376,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'findAllAsync is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.findNext}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.findNext}
   ///Use [PlatformFindInteractionController.findNext] instead.
   ///{@endtemplate}
   @Deprecated("Use FindInteractionController.findNext instead")
@@ -2385,7 +2385,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'findNext is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.clearMatches}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.clearMatches}
   ///Use [PlatformFindInteractionController.clearMatches] instead.
   ///{@endtemplate}
   @Deprecated("Use FindInteractionController.clearMatches instead")
@@ -2394,7 +2394,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'clearMatches is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getTRexRunnerHtml}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getTRexRunnerHtml}
   ///Use [tRexRunnerHtml] instead.
   ///{@endtemplate}
   @Deprecated("Use tRexRunnerHtml instead")
@@ -2403,7 +2403,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getTRexRunnerHtml is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getTRexRunnerCss}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getTRexRunnerCss}
   ///Use [tRexRunnerCss] instead.
   ///{@endtemplate}
   @Deprecated("Use tRexRunnerCss instead")
@@ -2412,7 +2412,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getTRexRunnerCss is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.getScale}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.getScale}
   ///Use [getZoomScale] instead.
   ///{@endtemplate}
   @Deprecated('Use getZoomScale instead')
@@ -2421,7 +2421,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'getScale is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.setSafeBrowsingWhitelist}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.setSafeBrowsingWhitelist}
   ///Use [setSafeBrowsingAllowlist] instead.
   ///{@endtemplate}
   @Deprecated("Use setSafeBrowsingAllowlist instead")
@@ -2430,7 +2430,7 @@ abstract class PlatformInAppWebViewController extends PlatformInterface
         'setSafeBrowsingWhitelist is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewController.dispose}
+  ///{@template webview_inapp_platform_interface.PlatformInAppWebViewController.dispose}
   ///Disposes the controller.
   ///{@endtemplate}
   void dispose({bool isKeepAlive = false}) {

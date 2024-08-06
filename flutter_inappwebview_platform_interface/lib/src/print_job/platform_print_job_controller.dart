@@ -19,14 +19,14 @@ class PlatformPrintJobControllerCreationParams {
   const PlatformPrintJobControllerCreationParams(
       {required this.id, this.onComplete});
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformPrintJobController.id}
+  ///{@macro webview_inapp_platform_interface.PlatformPrintJobController.id}
   final String id;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformPrintJobController.onComplete}
+  ///{@macro webview_inapp_platform_interface.PlatformPrintJobController.onComplete}
   final PrintJobCompletionHandler? onComplete;
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformPrintJobController}
+///{@template webview_inapp_platform_interface.PlatformPrintJobController}
 ///Class representing a print job eventually returned by [PlatformInAppWebViewController.printCurrentPage].
 ///
 ///**Officially Supported Platforms/Implementations**:
@@ -64,12 +64,12 @@ abstract class PlatformPrintJobController extends PlatformInterface
   /// The parameters used to initialize the [PlatformPrintJobController].
   final PlatformPrintJobControllerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPrintJobController.id}
+  ///{@template webview_inapp_platform_interface.PlatformPrintJobController.id}
   ///Print job ID.
   ///{@endtemplate}
   String get id => params.id;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPrintJobController.onComplete}
+  ///{@template webview_inapp_platform_interface.PlatformPrintJobController.onComplete}
   ///A completion handler used to handle the conclusion of the print job (for instance, to reset state) and to handle any errors encountered in printing.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -78,7 +78,7 @@ abstract class PlatformPrintJobController extends PlatformInterface
   ///{@endtemplate}
   PrintJobCompletionHandler? onComplete;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPrintJobController.cancel}
+  ///{@template webview_inapp_platform_interface.PlatformPrintJobController.cancel}
   ///Cancels this print job.
   ///You can request cancellation of a queued, started, blocked, or failed print job.
   ///
@@ -90,7 +90,7 @@ abstract class PlatformPrintJobController extends PlatformInterface
         'cancel is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPrintJobController.restart}
+  ///{@template webview_inapp_platform_interface.PlatformPrintJobController.restart}
   ///Restarts this print job.
   ///You can request restart of a failed print job.
   ///
@@ -102,7 +102,7 @@ abstract class PlatformPrintJobController extends PlatformInterface
         'restart is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPrintJobController.dismiss}
+  ///{@template webview_inapp_platform_interface.PlatformPrintJobController.dismiss}
   ///Dismisses the printing-options sheet or popover.
   ///
   ///You should dismiss the printing options when they are presented in a sheet or
@@ -118,7 +118,7 @@ abstract class PlatformPrintJobController extends PlatformInterface
         'dismiss is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPrintJobController.getInfo}
+  ///{@template webview_inapp_platform_interface.PlatformPrintJobController.getInfo}
   ///Gets the [PrintJobInfo] that describes this job.
   ///
   ///**NOTE**: The returned info object is a snapshot of the
@@ -135,7 +135,7 @@ abstract class PlatformPrintJobController extends PlatformInterface
         'getInfo is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPrintJobController.dispose}
+  ///{@template webview_inapp_platform_interface.PlatformPrintJobController.dispose}
   ///Disposes the print job.
   ///
   ///**Officially Supported Platforms/Implementations**:

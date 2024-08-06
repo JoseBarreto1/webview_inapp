@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 import 'in_app_webview/in_app_webview_controller.dart';
 import 'webview_environment/webview_environment.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager}
+///{@macro webview_inapp_platform_interface.PlatformCookieManager}
 class CookieManager {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager}
+  ///{@macro webview_inapp_platform_interface.PlatformCookieManager}
   CookieManager()
       : this.fromPlatformCreationParams(
           const PlatformCookieManagerCreationParams(),
@@ -32,8 +32,6 @@ class CookieManager {
 
   static CookieManager? _instance;
 
-  WebViewEnvironment? _webViewEnvironment;
-
   ///Gets the [CookieManager] shared instance.
   ///
   ///[webViewEnvironment] (Supported only on Windows) - Used to create the [CookieManager] using the specified environment.
@@ -50,7 +48,7 @@ class CookieManager {
     }
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager.setCookie}
+  ///{@macro webview_inapp_platform_interface.PlatformCookieManager.setCookie}
   Future<bool> setCookie(
           {required WebUri url,
           required String name,
@@ -79,7 +77,7 @@ class CookieManager {
           iosBelow11WebViewController: iosBelow11WebViewController?.platform,
           webViewController: webViewController?.platform);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager.getCookies}
+  ///{@macro webview_inapp_platform_interface.PlatformCookieManager.getCookies}
   Future<List<Cookie>> getCookies(
           {required WebUri url,
           @Deprecated("Use webViewController instead")
@@ -90,7 +88,7 @@ class CookieManager {
           iosBelow11WebViewController: iosBelow11WebViewController?.platform,
           webViewController: webViewController?.platform);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager.getCookie}
+  ///{@macro webview_inapp_platform_interface.PlatformCookieManager.getCookie}
   Future<Cookie?> getCookie(
           {required WebUri url,
           required String name,
@@ -103,7 +101,7 @@ class CookieManager {
           iosBelow11WebViewController: iosBelow11WebViewController?.platform,
           webViewController: webViewController?.platform);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager.deleteCookie}
+  ///{@macro webview_inapp_platform_interface.PlatformCookieManager.deleteCookie}
   Future<bool> deleteCookie(
           {required WebUri url,
           required String name,
@@ -120,7 +118,7 @@ class CookieManager {
           iosBelow11WebViewController: iosBelow11WebViewController?.platform,
           webViewController: webViewController?.platform);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager.deleteCookies}
+  ///{@macro webview_inapp_platform_interface.PlatformCookieManager.deleteCookies}
   Future<bool> deleteCookies(
           {required WebUri url,
           String path = "/",
@@ -135,13 +133,13 @@ class CookieManager {
           iosBelow11WebViewController: iosBelow11WebViewController?.platform,
           webViewController: webViewController?.platform);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager.deleteAllCookies}
+  ///{@macro webview_inapp_platform_interface.PlatformCookieManager.deleteAllCookies}
   Future<bool> deleteAllCookies() => platform.deleteAllCookies();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager.getAllCookies}
+  ///{@macro webview_inapp_platform_interface.PlatformCookieManager.getAllCookies}
   Future<List<Cookie>> getAllCookies() => platform.getAllCookies();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager.removeSessionCookies}
+  ///{@macro webview_inapp_platform_interface.PlatformCookieManager.removeSessionCookies}
   Future<bool> removeSessionCookies() => platform.removeSessionCookies();
 }
 

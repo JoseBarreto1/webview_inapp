@@ -1,6 +1,6 @@
-# flutter_inappwebview_android_example
+# webview_inapp_android_example
 
-Demonstrates how to use the flutter_inappwebview_android plugin.
+Demonstrates how to use the webview_inapp_android plugin.
 
 ## Getting Started
 

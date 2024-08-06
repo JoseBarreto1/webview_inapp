@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformProxyController}
+///{@macro webview_inapp_platform_interface.PlatformProxyController}
 class ProxyController {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformProxyController}
+  ///{@macro webview_inapp_platform_interface.PlatformProxyController}
   ProxyController()
       : this.fromPlatformCreationParams(
           const PlatformProxyControllerCreationParams(),
@@ -32,10 +32,10 @@ class ProxyController {
     return _instance!;
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformProxyController.setProxyOverride}
+  ///{@macro webview_inapp_platform_interface.PlatformProxyController.setProxyOverride}
   Future<void> setProxyOverride({required ProxySettings settings}) =>
       platform.setProxyOverride(settings: settings);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformProxyController.clearProxyOverride}
+  ///{@macro webview_inapp_platform_interface.PlatformProxyController.clearProxyOverride}
   Future<void> clearProxyOverride() => platform.clearProxyOverride();
 }

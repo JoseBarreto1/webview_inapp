@@ -15,7 +15,7 @@ class PlatformHttpAuthCredentialDatabaseCreationParams {
   const PlatformHttpAuthCredentialDatabaseCreationParams();
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase}
+///{@template webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase}
 ///Class that implements a singleton object (shared instance) which manages the shared HTTP auth credentials cache.
 ///On iOS and MacOS, this class uses the [URLCredentialStorage](https://developer.apple.com/documentation/foundation/urlcredentialstorage) class.
 ///On Android, this class has a custom implementation using `android.database.sqlite.SQLiteDatabase` because
@@ -59,7 +59,7 @@ abstract class PlatformHttpAuthCredentialDatabase extends PlatformInterface {
   /// The parameters used to initialize the [PlatformHttpAuthCredentialDatabase].
   final PlatformHttpAuthCredentialDatabaseCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.getAllAuthCredentials}
+  ///{@template webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.getAllAuthCredentials}
   ///Gets a map list of all HTTP auth credentials saved.
   ///Each map contains the key `protectionSpace` of type [URLProtectionSpace]
   ///and the key `credentials` of type List<[URLCredential]> that contains all the HTTP auth credentials saved for that `protectionSpace`.
@@ -74,7 +74,7 @@ abstract class PlatformHttpAuthCredentialDatabase extends PlatformInterface {
         'getAllAuthCredentials is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.getHttpAuthCredentials}
+  ///{@template webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.getHttpAuthCredentials}
   ///Gets all the HTTP auth credentials saved for that [protectionSpace].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -88,7 +88,7 @@ abstract class PlatformHttpAuthCredentialDatabase extends PlatformInterface {
         'getHttpAuthCredentials is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.setHttpAuthCredential}
+  ///{@template webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.setHttpAuthCredential}
   ///Saves an HTTP auth [credential] for that [protectionSpace].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -103,7 +103,7 @@ abstract class PlatformHttpAuthCredentialDatabase extends PlatformInterface {
         'setHttpAuthCredential is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.removeHttpAuthCredential}
+  ///{@template webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.removeHttpAuthCredential}
   ///Removes an HTTP auth [credential] for that [protectionSpace].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -118,7 +118,7 @@ abstract class PlatformHttpAuthCredentialDatabase extends PlatformInterface {
         'removeHttpAuthCredential is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.removeHttpAuthCredentials}
+  ///{@template webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.removeHttpAuthCredentials}
   ///Removes all the HTTP auth credentials saved for that [protectionSpace].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -132,7 +132,7 @@ abstract class PlatformHttpAuthCredentialDatabase extends PlatformInterface {
         'removeHttpAuthCredentials is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.clearAllAuthCredentials}
+  ///{@template webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.clearAllAuthCredentials}
   ///Removes all the HTTP auth credentials saved in the database.
   ///
   ///**Officially Supported Platforms/Implementations**:

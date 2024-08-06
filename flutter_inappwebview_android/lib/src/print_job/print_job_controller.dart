@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 /// Object specifying creation parameters for creating a [AndroidPrintJobController].
 ///
@@ -24,7 +24,7 @@ class AndroidPrintJobControllerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformPrintJobController}
+///{@macro webview_inapp_platform_interface.PlatformPrintJobController}
 class AndroidPrintJobController extends PlatformPrintJobController
     with ChannelController {
   /// Constructs a [AndroidPrintJobController].

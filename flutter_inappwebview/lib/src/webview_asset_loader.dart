@@ -1,6 +1,6 @@
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformPathHandler}
+///{@macro webview_inapp_platform_interface.PlatformPathHandler}
 abstract class PathHandler
     implements PlatformPathHandler, PlatformPathHandlerEvents {
   /// Constructs a [PathHandler] from a specific platform implementation.
@@ -32,9 +32,9 @@ abstract class PathHandler
   Map<String, dynamic> toJson() => platform.toJson();
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformAssetsPathHandler}
+///{@macro webview_inapp_platform_interface.PlatformAssetsPathHandler}
 class AssetsPathHandler extends PathHandler {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformAssetsPathHandler}
+  ///{@macro webview_inapp_platform_interface.PlatformAssetsPathHandler}
   AssetsPathHandler({required String path})
       : this.fromPlatformCreationParams(
             params: PlatformAssetsPathHandlerCreationParams(
@@ -56,9 +56,9 @@ class AssetsPathHandler extends PathHandler {
   final PlatformAssetsPathHandler platform;
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformResourcesPathHandler}
+///{@macro webview_inapp_platform_interface.PlatformResourcesPathHandler}
 class ResourcesPathHandler extends PathHandler {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformResourcesPathHandler}
+  ///{@macro webview_inapp_platform_interface.PlatformResourcesPathHandler}
   ResourcesPathHandler({required String path})
       : this.fromPlatformCreationParams(
             params: PlatformResourcesPathHandlerCreationParams(
@@ -80,9 +80,9 @@ class ResourcesPathHandler extends PathHandler {
   final PlatformResourcesPathHandler platform;
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformInternalStoragePathHandler}
+///{@macro webview_inapp_platform_interface.PlatformInternalStoragePathHandler}
 class InternalStoragePathHandler extends PathHandler {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInternalStoragePathHandler}
+  ///{@macro webview_inapp_platform_interface.PlatformInternalStoragePathHandler}
   InternalStoragePathHandler({required String path, required String directory})
       : this.fromPlatformCreationParams(
             params: PlatformInternalStoragePathHandlerCreationParams(
@@ -107,9 +107,9 @@ class InternalStoragePathHandler extends PathHandler {
   String get directory => platform.directory;
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformCustomPathHandler}
+///{@macro webview_inapp_platform_interface.PlatformCustomPathHandler}
 abstract class CustomPathHandler extends PathHandler {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformCustomPathHandler}
+  ///{@macro webview_inapp_platform_interface.PlatformCustomPathHandler}
   CustomPathHandler({required String path})
       : this.fromPlatformCreationParams(
             params: PlatformCustomPathHandlerCreationParams(

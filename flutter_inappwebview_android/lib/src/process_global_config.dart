@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 /// Object specifying creation parameters for creating a [AndroidProcessGlobalConfig].
 ///
@@ -25,7 +25,7 @@ class AndroidProcessGlobalConfigCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformProcessGlobalConfig}
+///{@macro webview_inapp_platform_interface.PlatformProcessGlobalConfig}
 class AndroidProcessGlobalConfig extends PlatformProcessGlobalConfig
     with ChannelController {
   /// Creates a new [AndroidProcessGlobalConfig].

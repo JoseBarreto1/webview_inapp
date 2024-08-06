@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 /// Object specifying creation parameters for creating a [AndroidPullToRefreshController].
 ///
@@ -26,7 +26,7 @@ class AndroidPullToRefreshControllerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformPullToRefreshController}
+///{@macro webview_inapp_platform_interface.PlatformPullToRefreshController}
 class AndroidPullToRefreshController extends PlatformPullToRefreshController
     with ChannelController {
   /// Constructs a [AndroidPullToRefreshController].

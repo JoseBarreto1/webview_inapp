@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 /// Object specifying creation parameters for creating a [PlatformInAppLocalhostServer].
@@ -18,20 +18,20 @@ class PlatformInAppLocalhostServerCreationParams {
     this.shared = false,
   });
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.port}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.port}
   final int port;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.directoryIndex}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.directoryIndex}
   final String directoryIndex;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.documentRoot}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.documentRoot}
   final String documentRoot;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.shared}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.shared}
   final bool shared;
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer}
+///{@template webview_inapp_platform_interface.PlatformInAppLocalhostServer}
 ///This class allows you to create a simple server on `http://localhost:[port]/`
 ///in order to be able to load your assets file on a local server.
 ///The default `port` value is `8080`.
@@ -73,22 +73,22 @@ abstract class PlatformInAppLocalhostServer extends PlatformInterface {
   /// The parameters used to initialize the [PlatformInAppLocalhostServer].
   final PlatformInAppLocalhostServerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.port}
+  ///{@template webview_inapp_platform_interface.PlatformInAppLocalhostServer.port}
   ///Represents the port of the server. The default value is `8080`.
   ///{@endtemplate}
   int get port => params.port;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.directoryIndex}
+  ///{@template webview_inapp_platform_interface.PlatformInAppLocalhostServer.directoryIndex}
   ///represents the index file to use. The default value is `index.html`.
   ///{@endtemplate}
   String get directoryIndex => params.directoryIndex;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.documentRoot}
+  ///{@template webview_inapp_platform_interface.PlatformInAppLocalhostServer.documentRoot}
   ///Represents the document root path to serve. The default value is `./`.
   ///{@endtemplate}
   String get documentRoot => params.documentRoot;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.shared}
+  ///{@template webview_inapp_platform_interface.PlatformInAppLocalhostServer.shared}
   ///Specifies whether additional `HttpServer`
   /// objects can bind to the same combination of `address`, `port` and `v6Only`.
   /// If `shared` is `true` and more `HttpServer`s from this isolate or other
@@ -98,7 +98,7 @@ abstract class PlatformInAppLocalhostServer extends PlatformInterface {
   ///{@endtemplate}
   bool get shared => params.shared;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.start}
+  ///{@template webview_inapp_platform_interface.PlatformInAppLocalhostServer.start}
   ///Starts the server on `http://localhost:[port]/`.
   ///
   ///**NOTE for iOS**: For the iOS Platform, you need to add the `NSAllowsLocalNetworking` key with `true` in the `Info.plist` file
@@ -117,7 +117,7 @@ abstract class PlatformInAppLocalhostServer extends PlatformInterface {
         'start is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.close}
+  ///{@template webview_inapp_platform_interface.PlatformInAppLocalhostServer.close}
   ///Closes the server.
   ///{@endtemplate}
   Future<void> close() {
@@ -125,7 +125,7 @@ abstract class PlatformInAppLocalhostServer extends PlatformInterface {
         'close is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.isRunning}
+  ///{@template webview_inapp_platform_interface.PlatformInAppLocalhostServer.isRunning}
   ///Indicates if the server is running or not.
   ///{@endtemplate}
   bool isRunning() {

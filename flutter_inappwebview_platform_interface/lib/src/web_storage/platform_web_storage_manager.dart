@@ -16,7 +16,7 @@ class PlatformWebStorageManagerCreationParams {
   const PlatformWebStorageManagerCreationParams();
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformWebStorageManager}
+///{@template webview_inapp_platform_interface.PlatformWebStorageManager}
 ///Class that implements a singleton object (shared instance) which manages the web storage used by WebView instances.
 ///On Android, it is implemented using [WebStorage](https://developer.android.com/reference/android/webkit/WebStorage.html).
 ///On iOS and MacOS, it is implemented using [WKWebsiteDataStore.default()](https://developer.apple.com/documentation/webkit/wkwebsitedatastore).
@@ -58,7 +58,7 @@ abstract class PlatformWebStorageManager extends PlatformInterface {
   /// The parameters used to initialize the [PlatformWebStorageManager].
   final PlatformWebStorageManagerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebStorageManager.getOrigins}
+  ///{@template webview_inapp_platform_interface.PlatformWebStorageManager.getOrigins}
   ///Gets the origins currently using either the Application Cache or Web SQL Database APIs.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -69,7 +69,7 @@ abstract class PlatformWebStorageManager extends PlatformInterface {
         'getOrigins is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebStorageManager.deleteAllData}
+  ///{@template webview_inapp_platform_interface.PlatformWebStorageManager.deleteAllData}
   ///Clears all storage currently being used by the JavaScript storage APIs.
   ///This includes the Application Cache, Web SQL Database and the HTML5 Web Storage APIs.
   ///
@@ -81,7 +81,7 @@ abstract class PlatformWebStorageManager extends PlatformInterface {
         'deleteAllData is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebStorageManager.deleteOrigin}
+  ///{@template webview_inapp_platform_interface.PlatformWebStorageManager.deleteOrigin}
   ///Clears the storage currently being used by both the Application Cache and Web SQL Database APIs by the given [origin].
   ///The origin is specified using its string representation.
   ///
@@ -93,7 +93,7 @@ abstract class PlatformWebStorageManager extends PlatformInterface {
         'deleteOrigin is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebStorageManager.getQuotaForOrigin}
+  ///{@template webview_inapp_platform_interface.PlatformWebStorageManager.getQuotaForOrigin}
   ///Gets the storage quota for the Web SQL Database API for the given [origin].
   ///The quota is given in bytes and the origin is specified using its string representation.
   ///Note that a quota is not enforced on a per-origin basis for the Application Cache API.
@@ -106,7 +106,7 @@ abstract class PlatformWebStorageManager extends PlatformInterface {
         'getQuotaForOrigin is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebStorageManager.getUsageForOrigin}
+  ///{@template webview_inapp_platform_interface.PlatformWebStorageManager.getUsageForOrigin}
   ///Gets the amount of storage currently being used by both the Application Cache and Web SQL Database APIs by the given [origin].
   ///The amount is given in bytes and the origin is specified using its string representation.
   ///
@@ -118,7 +118,7 @@ abstract class PlatformWebStorageManager extends PlatformInterface {
         'getUsageForOrigin is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebStorageManager.fetchDataRecords}
+  ///{@template webview_inapp_platform_interface.PlatformWebStorageManager.fetchDataRecords}
   ///Fetches data records containing the given website data types.
   ///
   ///[dataTypes] represents the website data types to fetch records for.
@@ -133,7 +133,7 @@ abstract class PlatformWebStorageManager extends PlatformInterface {
         'fetchDataRecords is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebStorageManager.removeDataFor}
+  ///{@template webview_inapp_platform_interface.PlatformWebStorageManager.removeDataFor}
   ///Removes website data of the given types for the given data records.
   ///
   ///[dataTypes] represents the website data types that should be removed.
@@ -151,7 +151,7 @@ abstract class PlatformWebStorageManager extends PlatformInterface {
         'removeDataFor is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebStorageManager.removeDataModifiedSince}
+  ///{@template webview_inapp_platform_interface.PlatformWebStorageManager.removeDataModifiedSince}
   ///Removes all website data of the given types that has been modified since the given date.
   ///
   ///[dataTypes] represents the website data types that should be removed.

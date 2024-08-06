@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 /// Object specifying creation parameters for creating a [AndroidPathHandler].
 ///
@@ -24,7 +24,7 @@ class AndroidPathHandlerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformPathHandler}
+///{@macro webview_inapp_platform_interface.PlatformPathHandler}
 abstract class AndroidPathHandler
     implements ChannelController, PlatformPathHandler {
   final String _id = IdGenerator.generate();
@@ -97,7 +97,7 @@ class AndroidAssetsPathHandlerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformAssetsPathHandler}
+///{@macro webview_inapp_platform_interface.PlatformAssetsPathHandler}
 class AndroidAssetsPathHandler extends PlatformAssetsPathHandler
     with AndroidPathHandler, ChannelController {
   /// Constructs a [AndroidAssetsPathHandler].
@@ -134,7 +134,7 @@ class AndroidResourcesPathHandlerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformResourcesPathHandler}
+///{@macro webview_inapp_platform_interface.PlatformResourcesPathHandler}
 class AndroidResourcesPathHandler extends PlatformResourcesPathHandler
     with AndroidPathHandler, ChannelController {
   /// Constructs a [AndroidResourcesPathHandler].
@@ -171,7 +171,7 @@ class AndroidInternalStoragePathHandlerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformInternalStoragePathHandler}
+///{@macro webview_inapp_platform_interface.PlatformInternalStoragePathHandler}
 class AndroidInternalStoragePathHandler
     extends PlatformInternalStoragePathHandler
     with AndroidPathHandler, ChannelController {
@@ -221,7 +221,7 @@ class AndroidCustomPathHandlerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformCustomPathHandler}
+///{@macro webview_inapp_platform_interface.PlatformCustomPathHandler}
 class AndroidCustomPathHandler extends PlatformCustomPathHandler
     with AndroidPathHandler, ChannelController {
   /// Constructs a [AndroidCustomPathHandler].

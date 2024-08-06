@@ -8,7 +8,7 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 import '../web_message/main.dart';
 
@@ -2739,12 +2739,12 @@ class AndroidInAppWebViewController extends PlatformInAppWebViewController
   }
 
   @override
-  Future<String> get tRexRunnerHtml async => await rootBundle.loadString(
-      'packages/flutter_inappwebview/assets/t_rex_runner/t-rex.html');
+  Future<String> get tRexRunnerHtml async => await rootBundle
+      .loadString('packages/webview_inapp/assets/t_rex_runner/t-rex.html');
 
   @override
-  Future<String> get tRexRunnerCss async => await rootBundle.loadString(
-      'packages/flutter_inappwebview/assets/t_rex_runner/t-rex.css');
+  Future<String> get tRexRunnerCss async => await rootBundle
+      .loadString('packages/webview_inapp/assets/t_rex_runner/t-rex.css');
 
   @override
   dynamic getViewId() {

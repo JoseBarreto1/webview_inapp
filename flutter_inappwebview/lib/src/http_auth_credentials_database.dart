@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase}
+///{@macro webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase}
 class HttpAuthCredentialDatabase {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase}
+  ///{@macro webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase}
   HttpAuthCredentialDatabase()
       : this.fromPlatformCreationParams(
           const PlatformHttpAuthCredentialDatabaseCreationParams(),
@@ -32,34 +32,34 @@ class HttpAuthCredentialDatabase {
     return _instance!;
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.getAllAuthCredentials}
+  ///{@macro webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.getAllAuthCredentials}
   Future<List<URLProtectionSpaceHttpAuthCredentials>> getAllAuthCredentials() =>
       platform.getAllAuthCredentials();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.getHttpAuthCredentials}
+  ///{@macro webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.getHttpAuthCredentials}
   Future<List<URLCredential>> getHttpAuthCredentials(
           {required URLProtectionSpace protectionSpace}) =>
       platform.getHttpAuthCredentials(protectionSpace: protectionSpace);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.setHttpAuthCredential}
+  ///{@macro webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.setHttpAuthCredential}
   Future<void> setHttpAuthCredential(
           {required URLProtectionSpace protectionSpace,
           required URLCredential credential}) =>
       platform.setHttpAuthCredential(
           protectionSpace: protectionSpace, credential: credential);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.removeHttpAuthCredential}
+  ///{@macro webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.removeHttpAuthCredential}
   Future<void> removeHttpAuthCredential(
           {required URLProtectionSpace protectionSpace,
           required URLCredential credential}) =>
       platform.removeHttpAuthCredential(
           protectionSpace: protectionSpace, credential: credential);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.removeHttpAuthCredentials}
+  ///{@macro webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.removeHttpAuthCredentials}
   Future<void> removeHttpAuthCredentials(
           {required URLProtectionSpace protectionSpace}) =>
       platform.removeHttpAuthCredentials(protectionSpace: protectionSpace);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformHttpAuthCredentialDatabase.clearAllAuthCredentials}
+  ///{@macro webview_inapp_platform_interface.PlatformHttpAuthCredentialDatabase.clearAllAuthCredentials}
   Future<void> clearAllAuthCredentials() => platform.clearAllAuthCredentials();
 }

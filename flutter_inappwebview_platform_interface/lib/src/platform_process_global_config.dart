@@ -18,7 +18,7 @@ class PlatformProcessGlobalConfigCreationParams {
   const PlatformProcessGlobalConfigCreationParams();
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformProcessGlobalConfig}
+///{@template webview_inapp_platform_interface.PlatformProcessGlobalConfig}
 ///Process Global Configuration for `WebView`.
 ///WebView has some process-global configuration parameters
 ///that cannot be changed once WebView has been loaded.
@@ -74,7 +74,7 @@ abstract class PlatformProcessGlobalConfig extends PlatformInterface {
   /// The parameters used to initialize the [PlatformProcessGlobalConfig].
   final PlatformProcessGlobalConfigCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformProcessGlobalConfig.apply}
+  ///{@template webview_inapp_platform_interface.PlatformProcessGlobalConfig.apply}
   ///Applies the configuration to be used by `WebView` on loading.
   ///This method can only be called once.
   ///

@@ -13,14 +13,14 @@ import 'in_app_webview_settings.dart';
 import 'platform_inappwebview_controller.dart';
 import '../print_job/main.dart';
 
-///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams}
+///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams}
 ///Class that represents a WebView. Used by [InAppWebView], [HeadlessInAppWebView] and the WebView of [PlatformInAppBrowser].
 ///{@endtemplate}
 class PlatformWebViewCreationParams<T> {
   final T Function(PlatformInAppWebViewController controller)?
       controllerFromPlatform;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.windowId}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.windowId}
   ///The window id of a [CreateWindowAction.windowId].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -30,7 +30,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final int? windowId;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onWebViewCreated}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onWebViewCreated}
   ///Event fired when the `WebView` is created.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -42,7 +42,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller)? onWebViewCreated;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onLoadStart}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onLoadStart}
   ///Event fired when the `WebView` starts to load an [url].
   ///
   ///**NOTE for Web**: it will be dispatched at the same time of [onLoadStop] event
@@ -59,7 +59,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller, WebUri? url)? onLoadStart;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onLoadStop}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onLoadStop}
   ///Event fired when the `WebView` finishes loading an [url].
   ///
   ///**NOTE for Web**: If `window.location.href` isn't accessible inside the iframe,
@@ -79,7 +79,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, Uri? url, int code, String message)?
       onLoadError;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onReceivedError}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onReceivedError}
   ///Event fired when the `WebView` encounters an [error] loading a [request].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -98,7 +98,7 @@ class PlatformWebViewCreationParams<T> {
           T controller, Uri? url, int statusCode, String description)?
       onLoadHttpError;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onReceivedHttpError}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onReceivedHttpError}
   ///Event fired when the `WebView` receives an HTTP error.
   ///
   ///[request] represents the originating request.
@@ -116,7 +116,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, WebResourceRequest request,
       WebResourceResponse errorResponse)? onReceivedHttpError;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onProgressChanged}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onProgressChanged}
   ///Event fired when the current [progress] of loading a page is changed.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -126,7 +126,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller, int progress)? onProgressChanged;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onConsoleMessage}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onConsoleMessage}
   ///Event fired when the `WebView` receives a [ConsoleMessage].
   ///
   ///**NOTE for Web**: this event will be called only if the iframe has the same origin.
@@ -140,7 +140,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, ConsoleMessage consoleMessage)?
       onConsoleMessage;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.shouldOverrideUrlLoading}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.shouldOverrideUrlLoading}
   ///Give the host application a chance to take control when a URL is about to be loaded in the current WebView.
   ///
   ///Note that on Android there isn't any way to load an URL for a frame that is not the main frame, so if the request is not for the main frame, the navigation is allowed by default.
@@ -163,7 +163,7 @@ class PlatformWebViewCreationParams<T> {
           T controller, NavigationAction navigationAction)?
       shouldOverrideUrlLoading;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onLoadResource}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onLoadResource}
   ///Event fired when the `WebView` loads a resource.
   ///
   ///**NOTE**: In order to be able to listen this event, you need to set [InAppWebViewSettings.useOnLoadResource] and [InAppWebViewSettings.javaScriptEnabled] setting to `true`.
@@ -175,7 +175,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller, LoadedResource resource)? onLoadResource;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onScrollChanged}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onScrollChanged}
   ///Event fired when the `WebView` scrolls.
   ///
   ///[x] represents the current horizontal scroll origin in pixels.
@@ -198,7 +198,7 @@ class PlatformWebViewCreationParams<T> {
   @Deprecated('Use onDownloadStartRequest instead')
   final void Function(T controller, Uri url)? onDownloadStart;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onDownloadStartRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onDownloadStartRequest}
   ///Event fired when `WebView` recognizes a downloadable file.
   ///To download the file, you can use the [flutter_downloader](https://pub.dev/packages/flutter_downloader) plugin.
   ///
@@ -219,7 +219,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<CustomSchemeResponse?> Function(T controller, Uri url)?
       onLoadResourceCustomScheme;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onLoadResourceWithCustomScheme}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onLoadResourceWithCustomScheme}
   ///Event fired when the `WebView` finds the `custom-scheme` while loading a resource.
   ///Here you can handle the url [request] and return a [CustomSchemeResponse] to load a specific resource encoded to `base64`.
   ///
@@ -231,7 +231,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<CustomSchemeResponse?> Function(
       T controller, WebResourceRequest request)? onLoadResourceWithCustomScheme;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onCreateWindow}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onCreateWindow}
   ///Event fired when the `WebView` requests the host application to create a new window,
   ///for example when trying to open a link with `target="_blank"` or when `window.open()` is called by JavaScript side.
   ///If the host application chooses to honor this request, it should return `true` from this method, create a new WebView to host the window.
@@ -273,7 +273,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<bool?> Function(
       T controller, CreateWindowAction createWindowAction)? onCreateWindow;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onCloseWindow}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onCloseWindow}
   ///Event fired when the host application should close the given WebView and remove it from the view system if necessary.
   ///At this point, WebCore has stopped any loading in this window and has removed any cross-scripting ability in javascript.
   ///
@@ -284,7 +284,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller)? onCloseWindow;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onWindowFocus}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onWindowFocus}
   ///Event fired when the JavaScript `window` object of the WebView has received focus.
   ///This is the result of the `focus` JavaScript event applied to the `window` object.
   ///
@@ -298,7 +298,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller)? onWindowFocus;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onWindowBlur}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onWindowBlur}
   ///Event fired when the JavaScript `window` object of the WebView has lost focus.
   ///This is the result of the `blur` JavaScript event applied to the `window` object.
   ///
@@ -312,7 +312,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller)? onWindowBlur;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onJsAlert}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onJsAlert}
   ///Event fired when javascript calls the `alert()` method to display an alert dialog.
   ///If [JsAlertResponse.handledByClient] is `true`, the webview will assume that the client will handle the dialog.
   ///
@@ -326,7 +326,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<JsAlertResponse?> Function(
       T controller, JsAlertRequest jsAlertRequest)? onJsAlert;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onJsConfirm}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onJsConfirm}
   ///Event fired when javascript calls the `confirm()` method to display a confirm dialog.
   ///If [JsConfirmResponse.handledByClient] is `true`, the webview will assume that the client will handle the dialog.
   ///
@@ -340,7 +340,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<JsConfirmResponse?> Function(
       T controller, JsConfirmRequest jsConfirmRequest)? onJsConfirm;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onJsPrompt}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onJsPrompt}
   ///Event fired when javascript calls the `prompt()` method to display a prompt dialog.
   ///If [JsPromptResponse.handledByClient] is `true`, the webview will assume that the client will handle the dialog.
   ///
@@ -354,7 +354,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<JsPromptResponse?> Function(
       T controller, JsPromptRequest jsPromptRequest)? onJsPrompt;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onReceivedHttpAuthRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onReceivedHttpAuthRequest}
   ///Event fired when the WebView received an HTTP authentication request. The default behavior is to cancel the request.
   ///
   ///[challenge] contains data about host, port, protocol, realm, etc. as specified in the [URLAuthenticationChallenge].
@@ -368,7 +368,7 @@ class PlatformWebViewCreationParams<T> {
           T controller, HttpAuthenticationChallenge challenge)?
       onReceivedHttpAuthRequest;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onReceivedServerTrustAuthRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onReceivedServerTrustAuthRequest}
   ///Event fired when the WebView need to perform server trust authentication (certificate validation).
   ///The host application must return either [ServerTrustAuthResponse] instance with [ServerTrustAuthResponseAction.CANCEL] or [ServerTrustAuthResponseAction.PROCEED].
   ///
@@ -383,7 +383,7 @@ class PlatformWebViewCreationParams<T> {
           T controller, ServerTrustChallenge challenge)?
       onReceivedServerTrustAuthRequest;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onReceivedClientCertRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onReceivedClientCertRequest}
   ///Notify the host application to handle an SSL client certificate request.
   ///Webview stores the response in memory (for the life of the application) if [ClientCertResponseAction.PROCEED] or [ClientCertResponseAction.CANCEL]
   ///is called and does not call [onReceivedClientCertRequest] again for the same host and port pair.
@@ -404,7 +404,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, int activeMatchOrdinal, int numberOfMatches,
       bool isDoneCounting)? onFindResultReceived;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.shouldInterceptAjaxRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.shouldInterceptAjaxRequest}
   ///Event fired when an `XMLHttpRequest` is sent to a server.
   ///It gives the host application a chance to take control over the request before sending it.
   ///
@@ -427,7 +427,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<AjaxRequest?> Function(T controller, AjaxRequest ajaxRequest)?
       shouldInterceptAjaxRequest;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onAjaxReadyStateChange}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onAjaxReadyStateChange}
   ///Event fired whenever the `readyState` attribute of an `XMLHttpRequest` changes.
   ///It gives the host application a chance to abort the request.
   ///
@@ -447,7 +447,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<AjaxRequestAction?> Function(
       T controller, AjaxRequest ajaxRequest)? onAjaxReadyStateChange;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onAjaxProgress}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onAjaxProgress}
   ///Event fired as an `XMLHttpRequest` progress.
   ///It gives the host application a chance to abort the request.
   ///
@@ -467,7 +467,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<AjaxRequestAction?> Function(
       T controller, AjaxRequest ajaxRequest)? onAjaxProgress;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.shouldInterceptFetchRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.shouldInterceptFetchRequest}
   ///Event fired when a request is sent to a server through [Fetch API](https://developer.mozilla.org/it/docs/Web/API/Fetch_API).
   ///It gives the host application a chance to take control over the request before sending it.
   ///
@@ -487,7 +487,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<FetchRequest?> Function(T controller, FetchRequest fetchRequest)?
       shouldInterceptFetchRequest;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onUpdateVisitedHistory}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onUpdateVisitedHistory}
   ///Event fired when the host application updates its visited links database.
   ///This event is also fired when the navigation state of the `WebView` changes through the usage of
   ///javascript **[History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API)** functions (`pushState()`, `replaceState()`) and `onpopstate` event
@@ -513,7 +513,7 @@ class PlatformWebViewCreationParams<T> {
   @Deprecated("Use onPrintRequest instead")
   final void Function(T controller, Uri? url)? onPrint;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onPrintRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onPrintRequest}
   ///Event fired when `window.print()` is called from JavaScript side.
   ///Return `true` if you want to handle the print job.
   ///Otherwise return `false`, so the [PlatformPrintJobController] will be handled and disposed automatically by the system.
@@ -534,7 +534,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<bool?> Function(T controller, WebUri? url,
       PlatformPrintJobController? printJobController)? onPrintRequest;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onLongPressHitTestResult}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onLongPressHitTestResult}
   ///Event fired when an HTML element of the webview has been clicked and held.
   ///
   ///[hitTestResult] represents the hit result for hitting an HTML elements.
@@ -546,7 +546,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, InAppWebViewHitTestResult hitTestResult)?
       onLongPressHitTestResult;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onEnterFullscreen}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onEnterFullscreen}
   ///Event fired when the current page has entered full screen mode.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -557,7 +557,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller)? onEnterFullscreen;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onExitFullscreen}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onExitFullscreen}
   ///Event fired when the current page has exited full screen mode.
   ///
   ///**Official Android API**: https://developer.android.com/reference/android/webkit/WebChromeClient#onHideCustomView()
@@ -572,7 +572,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller)? onExitFullscreen;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onPageCommitVisible}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onPageCommitVisible}
   ///Called when the web view begins to receive web content.
   ///
   ///This event occurs early in the document loading process, and as such
@@ -587,7 +587,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller, WebUri? url)? onPageCommitVisible;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onTitleChanged}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onTitleChanged}
   ///Event fired when a change in the document title occurred.
   ///
   ///[title] represents the string containing the new title of the document.
@@ -603,7 +603,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final void Function(T controller, String? title)? onTitleChanged;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onOverScrolled}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onOverScrolled}
   ///Event fired to respond to the results of an over-scroll operation.
   ///
   ///[x] represents the new X scroll value in pixels.
@@ -621,7 +621,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, int x, int y, bool clampedX, bool clampedY)?
       onOverScrolled;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onZoomScaleChanged}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onZoomScaleChanged}
   ///Event fired when the zoom scale of the WebView has changed.
   ///
   ///[oldScale] The old zoom scale factor.
@@ -644,7 +644,7 @@ class PlatformWebViewCreationParams<T> {
           T controller, Uri url, SafeBrowsingThreat? threatType)?
       androidOnSafeBrowsingHit;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onSafeBrowsingHit}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onSafeBrowsingHit}
   ///Event fired when the webview notifies that a loading URL has been flagged by Safe Browsing.
   ///The default behavior is to show an interstitial to the user, with the reporting checkbox visible.
   ///
@@ -667,7 +667,7 @@ class PlatformWebViewCreationParams<T> {
           T controller, String origin, List<String> resources)?
       androidOnPermissionRequest;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onPermissionRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onPermissionRequest}
   ///Event fired when the WebView is requesting permission to access the specified resources and the permission currently isn't granted or denied.
   ///
   ///[permissionRequest] represents the permission request with an array of resources the web content wants to access
@@ -692,7 +692,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<GeolocationPermissionShowPromptResponse?> Function(
       T controller, String origin)? androidOnGeolocationPermissionsShowPrompt;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onGeolocationPermissionsShowPrompt}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onGeolocationPermissionsShowPrompt}
   ///Event that notifies the host application that web content from the specified origin is attempting to use the Geolocation API, but no permission state is currently set for that origin.
   ///Note that for applications targeting Android N and later SDKs (API level > `Build.VERSION_CODES.M`) this method is only called for requests originating from secure origins such as https.
   ///On non-secure origins geolocation requests are automatically denied.
@@ -709,7 +709,7 @@ class PlatformWebViewCreationParams<T> {
   @Deprecated("Use onGeolocationPermissionsHidePrompt instead")
   final void Function(T controller)? androidOnGeolocationPermissionsHidePrompt;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onGeolocationPermissionsHidePrompt}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onGeolocationPermissionsHidePrompt}
   ///Notify the host application that a request for Geolocation permissions, made with a previous call to [onGeolocationPermissionsShowPrompt] has been canceled.
   ///Any related UI should therefore be hidden.
   ///
@@ -723,7 +723,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<WebResourceResponse?> Function(
       T controller, WebResourceRequest request)? androidShouldInterceptRequest;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.shouldInterceptRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.shouldInterceptRequest}
   ///Notify the host application of a resource request and allow the application to return the data.
   ///If the return value is `null`, the WebView will continue to load the resource as usual.
   ///Otherwise, the return response and data will be used.
@@ -749,7 +749,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<WebViewRenderProcessAction?> Function(T controller, Uri? url)?
       androidOnRenderProcessUnresponsive;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onRenderProcessUnresponsive}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onRenderProcessUnresponsive}
   ///Event called when the renderer currently associated with the WebView becomes unresponsive as a result of a long running blocking task such as the execution of JavaScript.
   ///
   ///If a WebView fails to process an input event, or successfully navigate to a new URL within a reasonable time frame, the renderer is considered to be unresponsive, and this callback will be called.
@@ -778,7 +778,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<WebViewRenderProcessAction?> Function(T controller, Uri? url)?
       androidOnRenderProcessResponsive;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onRenderProcessResponsive}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onRenderProcessResponsive}
   ///Event called once when an unresponsive renderer currently associated with the WebView becomes responsive.
   ///
   ///After a WebView renderer becomes unresponsive, which is notified to the application by [onRenderProcessUnresponsive],
@@ -800,7 +800,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, RenderProcessGoneDetail detail)?
       androidOnRenderProcessGone;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onRenderProcessGone}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onRenderProcessGone}
   ///Event fired when the given WebView's render process has exited.
   ///The application's implementation of this callback should only attempt to clean up the WebView.
   ///The WebView should be removed from the view hierarchy, all references to it should be cleaned up.
@@ -820,7 +820,7 @@ class PlatformWebViewCreationParams<T> {
   final Future<FormResubmissionAction?> Function(T controller, Uri? url)?
       androidOnFormResubmission;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onFormResubmission}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onFormResubmission}
   ///As the host application if the browser should resend data as the requested page was a result of a POST. The default is to not resend the data.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -838,7 +838,7 @@ class PlatformWebViewCreationParams<T> {
   @Deprecated('Use onReceivedIcon instead')
   final void Function(T controller, Uint8List icon)? androidOnReceivedIcon;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onReceivedIcon}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onReceivedIcon}
   ///Event fired when there is new favicon for the current page.
   ///
   ///[icon] represents the favicon for the current page.
@@ -853,7 +853,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, Uri url, bool precomposed)?
       androidOnReceivedTouchIconUrl;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onReceivedTouchIconUrl}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onReceivedTouchIconUrl}
   ///Event fired when there is an url for an apple-touch-icon.
   ///
   ///[url] represents the icon url.
@@ -872,7 +872,7 @@ class PlatformWebViewCreationParams<T> {
           T controller, JsBeforeUnloadRequest jsBeforeUnloadRequest)?
       androidOnJsBeforeUnload;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onJsBeforeUnload}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onJsBeforeUnload}
   ///Event fired when the client should display a dialog to confirm navigation away from the current page.
   ///This is the result of the `onbeforeunload` javascript event.
   ///If [JsBeforeUnloadResponse.handledByClient] is `true`, WebView will assume that the client will handle the confirm dialog.
@@ -895,7 +895,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, LoginRequest loginRequest)?
       androidOnReceivedLoginRequest;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onReceivedLoginRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onReceivedLoginRequest}
   ///Event fired when a request to automatically log in the user has been processed.
   ///
   ///[loginRequest] contains the realm, account and args of the login request.
@@ -906,7 +906,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, LoginRequest loginRequest)?
       onReceivedLoginRequest;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onPermissionRequestCanceled}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onPermissionRequestCanceled}
   ///Notify the host application that the given permission request has been canceled. Any related UI should therefore be hidden.
   ///
   ///[permissionRequest] represents the permission request that needs be canceled
@@ -921,7 +921,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, PermissionRequest permissionRequest)?
       onPermissionRequestCanceled;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onRequestFocus}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onRequestFocus}
   ///Request display and focus for this WebView.
   ///This may happen due to another WebView opening a link in this WebView and requesting that this WebView be displayed.
   ///
@@ -934,7 +934,7 @@ class PlatformWebViewCreationParams<T> {
   @Deprecated('Use onWebContentProcessDidTerminate instead')
   final void Function(T controller)? iosOnWebContentProcessDidTerminate;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onWebContentProcessDidTerminate}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onWebContentProcessDidTerminate}
   ///Invoked when the web view's web content process is terminated.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -948,7 +948,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller)?
       iosOnDidReceiveServerRedirectForProvisionalNavigation;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onDidReceiveServerRedirectForProvisionalNavigation}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onDidReceiveServerRedirectForProvisionalNavigation}
   ///Called when a web view receives a server redirect.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -964,7 +964,7 @@ class PlatformWebViewCreationParams<T> {
           T controller, IOSWKNavigationResponse navigationResponse)?
       iosOnNavigationResponse;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onNavigationResponse}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onNavigationResponse}
   ///Called when a web view asks for permission to navigate to new content after the response to the navigation request is known.
   ///
   ///[navigationResponse] represents the navigation response.
@@ -985,7 +985,7 @@ class PlatformWebViewCreationParams<T> {
           T controller, URLAuthenticationChallenge challenge)?
       iosShouldAllowDeprecatedTLS;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.shouldAllowDeprecatedTLS}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.shouldAllowDeprecatedTLS}
   ///Called when a web view asks whether to continue with a connection that uses a deprecated version of TLS (v1.0 and v1.1).
   ///
   ///[challenge] represents the authentication challenge.
@@ -1002,7 +1002,7 @@ class PlatformWebViewCreationParams<T> {
           T controller, URLAuthenticationChallenge challenge)?
       shouldAllowDeprecatedTLS;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onCameraCaptureStateChanged}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onCameraCaptureStateChanged}
   ///Event fired when a change in the camera capture state occurred.
   ///
   ///**NOTE for iOS**: available only on iOS 15.0+.
@@ -1019,7 +1019,7 @@ class PlatformWebViewCreationParams<T> {
     MediaCaptureState? newState,
   )? onCameraCaptureStateChanged;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onMicrophoneCaptureStateChanged}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onMicrophoneCaptureStateChanged}
   ///Event fired when a change in the microphone capture state occurred.
   ///
   ///**NOTE for iOS**: available only on iOS 15.0+.
@@ -1036,7 +1036,7 @@ class PlatformWebViewCreationParams<T> {
     MediaCaptureState? newState,
   )? onMicrophoneCaptureStateChanged;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.onContentSizeChanged}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.onContentSizeChanged}
   ///Event fired when the content size of the `WebView` changes.
   ///
   ///[oldContentSize] represents the old content size value.
@@ -1049,7 +1049,7 @@ class PlatformWebViewCreationParams<T> {
   final void Function(T controller, Size oldContentSize, Size newContentSize)?
       onContentSizeChanged;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.initialUrlRequest}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.initialUrlRequest}
   ///Initial url request that will be loaded.
   ///
   ///**NOTE for Android**: when loading an URL Request using "POST" method, headers are ignored.
@@ -1063,7 +1063,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final URLRequest? initialUrlRequest;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.initialFile}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.initialFile}
   ///Initial asset file that will be loaded. See [InAppWebViewController.loadFile] for explanation.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1075,7 +1075,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final String? initialFile;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.initialData}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.initialData}
   ///Initial [InAppWebViewInitialData] that will be loaded.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1091,7 +1091,7 @@ class PlatformWebViewCreationParams<T> {
   @Deprecated('Use initialSettings instead')
   final InAppWebViewGroupOptions? initialOptions;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.initialSettings}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.initialSettings}
   ///Initial settings that will be used.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1102,7 +1102,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final InAppWebViewSettings? initialSettings;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.contextMenu}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.contextMenu}
   ///Context menu which contains custom menu items to be shown when [ContextMenu] is presented.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1111,7 +1111,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final ContextMenu? contextMenu;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.initialUserScripts}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.initialUserScripts}
   ///Initial list of user scripts to be loaded at start or end of a page loading.
   ///To add or remove user scripts, you have to use the [InAppWebViewController]'s methods such as [InAppWebViewController.addUserScript],
   ///[InAppWebViewController.removeUserScript], [InAppWebViewController.removeAllUserScripts], etc.
@@ -1128,7 +1128,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final UnmodifiableListView<UserScript>? initialUserScripts;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.pullToRefreshController}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.pullToRefreshController}
   ///Represents the pull-to-refresh feature controller.
   ///
   ///**NOTE for Android**: to be able to use the "pull-to-refresh" feature, [InAppWebViewSettings.useHybridComposition] must be `true`.
@@ -1139,7 +1139,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final PlatformPullToRefreshController? pullToRefreshController;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewCreationParams.findInteractionController}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewCreationParams.findInteractionController}
   ///Represents the find interaction feature controller.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -1149,7 +1149,7 @@ class PlatformWebViewCreationParams<T> {
   ///{@endtemplate}
   final PlatformFindInteractionController? findInteractionController;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebViewCreationParams}
+  ///{@macro webview_inapp_platform_interface.PlatformWebViewCreationParams}
   const PlatformWebViewCreationParams(
       {this.controllerFromPlatform,
       this.windowId,

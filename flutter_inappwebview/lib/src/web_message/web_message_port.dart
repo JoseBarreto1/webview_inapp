@@ -1,8 +1,8 @@
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformWebMessagePort}
+///{@macro webview_inapp_platform_interface.PlatformWebMessagePort}
 class WebMessagePort implements IWebMessagePort {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessagePort}
+  ///{@macro webview_inapp_platform_interface.PlatformWebMessagePort}
   WebMessagePort({required int index})
       : this.fromPlatformCreationParams(
             params: PlatformWebMessagePortCreationParams(index: index));
@@ -21,14 +21,14 @@ class WebMessagePort implements IWebMessagePort {
   /// Implementation of [PlatformWebMessagePort] for the current platform.
   final PlatformWebMessagePort platform;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessagePort.setWebMessageCallback}
+  ///{@macro webview_inapp_platform_interface.PlatformWebMessagePort.setWebMessageCallback}
   Future<void> setWebMessageCallback(WebMessageCallback? onMessage) =>
       platform.setWebMessageCallback(onMessage);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessagePort.postMessage}
+  ///{@macro webview_inapp_platform_interface.PlatformWebMessagePort.postMessage}
   Future<void> postMessage(WebMessage message) => platform.postMessage(message);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessagePort.close}
+  ///{@macro webview_inapp_platform_interface.PlatformWebMessagePort.close}
   Future<void> close() => platform.close();
 
   Map<String, dynamic> toMap() => platform.toMap();

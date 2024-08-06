@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_inappwebview_platform_interface/src/types/disposable.dart';
+import 'package:webview_inapp_platform_interface/src/types/disposable.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import '../in_app_webview/in_app_webview_settings.dart';
 import '../debug_logging_settings.dart';
@@ -16,7 +16,7 @@ class PlatformFindInteractionControllerCreationParams {
   const PlatformFindInteractionControllerCreationParams(
       {this.onFindResultReceived});
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformFindInteractionController.onFindResultReceived}
+  ///{@macro webview_inapp_platform_interface.PlatformFindInteractionController.onFindResultReceived}
   final void Function(
       PlatformFindInteractionController controller,
       int activeMatchOrdinal,
@@ -24,7 +24,7 @@ class PlatformFindInteractionControllerCreationParams {
       bool isDoneCounting)? onFindResultReceived;
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController}
+///{@template webview_inapp_platform_interface.PlatformFindInteractionController}
 ///This class represents the controller used by the `WebView` to add
 ///text-finding capabilities, such as the "Find on page" feature.
 ///
@@ -68,7 +68,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
   /// The parameters used to initialize the [PlatformFindInteractionController].
   final PlatformFindInteractionControllerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.onFindResultReceived}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.onFindResultReceived}
   ///Event fired as find-on-page operations progress.
   ///The listener may be notified multiple times while the operation is underway, and the [numberOfMatches] value should not be considered final unless [isDoneCounting] is true.
   ///
@@ -89,7 +89,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
           int activeMatchOrdinal, int numberOfMatches, bool isDoneCounting)?
       get onFindResultReceived => params.onFindResultReceived;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.findAll}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.findAll}
   ///Finds all instances of find on the page and highlights them. Notifies [PlatformFindInteractionController.onFindResultReceived] listener.
   ///
   ///[find] represents the string to find.
@@ -110,7 +110,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
         'findAll is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.findNext}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.findNext}
   ///Highlights and scrolls to the next match found by [findAll]. Notifies [PlatformFindInteractionController.onFindResultReceived] listener.
   ///
   ///[forward] represents the direction to search. The default value is `true`, meaning forward.
@@ -129,7 +129,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
         'findNext is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.clearMatches}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.clearMatches}
   ///Clears the highlighting surrounding text matches created by [findAll].
   ///
   ///**NOTE**: on iOS, if [InAppWebViewSettings.isFindInteractionEnabled] is `true`,
@@ -146,7 +146,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
         'clearMatches is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.setSearchText}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.setSearchText}
   ///Pre-populate the search text to be used.
   ///
   ///On iOS, if [InAppWebViewSettings.isFindInteractionEnabled] is `true,
@@ -162,7 +162,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
         'setSearchText is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.getSearchText}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.getSearchText}
   ///Get the search text used.
   ///
   ///On iOS, if [InAppWebViewSettings.isFindInteractionEnabled] is `true,
@@ -178,7 +178,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
         'getSearchText is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.isFindNavigatorVisible}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.isFindNavigatorVisible}
   ///A Boolean value that indicates when the find panel displays onscreen.
   ///
   ///**NOTE**: available only on iOS and only if [InAppWebViewSettings.isFindInteractionEnabled] is `true`.
@@ -191,7 +191,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
         'isFindNavigatorVisible is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.updateResultCount}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.updateResultCount}
   ///Updates the results the interface displays for the active search.
   ///
   ///**NOTE**: available only on iOS and only if [InAppWebViewSettings.isFindInteractionEnabled] is `true`.
@@ -204,7 +204,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
         'updateResultCount is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.presentFindNavigator}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.presentFindNavigator}
   ///Begins a search, displaying the find panel.
   ///
   ///**NOTE**: available only on iOS and only if [InAppWebViewSettings.isFindInteractionEnabled] is `true`.
@@ -217,7 +217,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
         'presentFindNavigator is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.dismissFindNavigator}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.dismissFindNavigator}
   ///Dismisses the find panel, if present.
   ///
   ///**NOTE**: available only on iOS and only if [InAppWebViewSettings.isFindInteractionEnabled] is `true`.
@@ -230,7 +230,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
         'dismissFindNavigator is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.getActiveFindSession}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.getActiveFindSession}
   ///If there's a currently active find session, returns the active find session.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -243,7 +243,7 @@ abstract class PlatformFindInteractionController extends PlatformInterface
         'getActiveFindSession is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformFindInteractionController.dispose}
+  ///{@template webview_inapp_platform_interface.PlatformFindInteractionController.dispose}
   ///Disposes the controller.
   ///{@endtemplate}
   @override

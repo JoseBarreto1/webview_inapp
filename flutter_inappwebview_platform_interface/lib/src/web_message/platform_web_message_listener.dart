@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_inappwebview_platform_interface/src/types/disposable.dart';
+import 'package:webview_inapp_platform_interface/src/types/disposable.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import '../in_app_webview/platform_inappwebview_controller.dart';
 import '../inappwebview_platform.dart';
@@ -18,13 +18,13 @@ class PlatformWebMessageListenerCreationParams {
       this.allowedOriginRules,
       this.onPostMessage});
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessageListener.jsObjectName}
+  ///{@macro webview_inapp_platform_interface.PlatformWebMessageListener.jsObjectName}
   final String jsObjectName;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessageListener.allowedOriginRules}
+  ///{@macro webview_inapp_platform_interface.PlatformWebMessageListener.allowedOriginRules}
   final Set<String>? allowedOriginRules;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessageListener.onPostMessage}
+  ///{@macro webview_inapp_platform_interface.PlatformWebMessageListener.onPostMessage}
   final OnPostMessageCallback? onPostMessage;
 
   @override
@@ -33,7 +33,7 @@ class PlatformWebMessageListenerCreationParams {
   }
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformWebMessageListener}
+///{@template webview_inapp_platform_interface.PlatformWebMessageListener}
 ///This listener receives messages sent on the JavaScript object which was injected by [PlatformInAppWebViewController.addWebMessageListener].
 ///
 ///**Officially Supported Platforms/Implementations**:
@@ -71,17 +71,17 @@ abstract class PlatformWebMessageListener extends PlatformInterface
   /// The parameters used to initialize the [PlatformWebMessageListener].
   final PlatformWebMessageListenerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebMessageListener.jsObjectName}
+  ///{@template webview_inapp_platform_interface.PlatformWebMessageListener.jsObjectName}
   ///The name for the injected JavaScript object.
   ///{@endtemplate}
   String get jsObjectName => params.jsObjectName;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebMessageListener.allowedOriginRules}
+  ///{@template webview_inapp_platform_interface.PlatformWebMessageListener.allowedOriginRules}
   ///A set of matching rules for the allowed origins.
   ///{@endtemplate}
   Set<String>? get allowedOriginRules => params.allowedOriginRules;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebMessageListener.onPostMessage}
+  ///{@template webview_inapp_platform_interface.PlatformWebMessageListener.onPostMessage}
   ///Event that receives a message sent by a `postMessage()` on the injected JavaScript object.
   ///
   ///Note that when the frame is `file:` or `content:` origin, the value of [sourceOrigin] is `null`.
@@ -105,7 +105,7 @@ abstract class PlatformWebMessageListener extends PlatformInterface
         'toJson is not implemented on the current platform.');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebMessageListener.dispose}
+  ///{@template webview_inapp_platform_interface.PlatformWebMessageListener.dispose}
   ///Disposes the channel.
   ///{@endtemplate}
   @override
@@ -133,7 +133,7 @@ class PlatformJavaScriptReplyProxyCreationParams {
   final PlatformWebMessageListener webMessageListener;
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformJavaScriptReplyProxy}
+///{@template webview_inapp_platform_interface.PlatformJavaScriptReplyProxy}
 ///This class represents the JavaScript object injected by [PlatformInAppWebViewController.addWebMessageListener].
 ///An instance will be given by [PlatformWebMessageListener.onPostMessage].
 ///The app can use `postMessage(String)` to talk to the JavaScript context.
@@ -171,7 +171,7 @@ abstract class PlatformJavaScriptReplyProxy extends PlatformInterface {
   /// The parameters used to initialize the [PlatformJavaScriptReplyProxy].
   final PlatformJavaScriptReplyProxyCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformJavaScriptReplyProxy.postMessage}
+  ///{@template webview_inapp_platform_interface.PlatformJavaScriptReplyProxy.postMessage}
   ///Post a [message] to the injected JavaScript object which sent this [PlatformJavaScriptReplyProxy].
   ///
   ///If [message] is of type [WebMessageType.ARRAY_BUFFER], be aware that large byte buffers can lead to out-of-memory crashes on low-end devices.

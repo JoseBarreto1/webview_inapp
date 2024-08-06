@@ -193,7 +193,7 @@ class PlatformInAppWebViewWidgetCreationParams
 
 /// Interface for a platform implementation of a web view widget.
 ///
-///{@template flutter_inappwebview_platform_interface.PlatformInAppWebViewWidget}
+///{@template webview_inapp_platform_interface.PlatformInAppWebViewWidget}
 ///Flutter Widget for adding an **inline native WebView** integrated in the flutter widget tree.
 ///
 ///**Officially Supported Platforms/Implementations**:

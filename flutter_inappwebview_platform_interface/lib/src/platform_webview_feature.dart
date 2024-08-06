@@ -16,7 +16,7 @@ class PlatformWebViewFeatureCreationParams {
   const PlatformWebViewFeatureCreationParams();
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformWebViewFeature}
+///{@template webview_inapp_platform_interface.PlatformWebViewFeature}
 ///Class that represents an Android-specific utility class for checking which WebView Support Library features are supported on the device.
 ///
 ///**Officially Supported Platforms/Implementations**:
@@ -66,7 +66,7 @@ abstract class PlatformWebViewFeature extends PlatformInterface {
   /// The parameters used to initialize the [PlatformWebViewFeature].
   final PlatformWebViewFeatureCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewFeature.isFeatureSupported}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewFeature.isFeatureSupported}
   ///Return whether a feature is supported at run-time. On devices running Android version `Build.VERSION_CODES.LOLLIPOP` and higher,
   ///this will check whether a feature is supported, depending on the combination of the desired feature, the Android version of device,
   ///and the WebView APK on the device. If running on a device with a lower API level, this will always return `false`.
@@ -86,7 +86,7 @@ abstract class PlatformWebViewFeature extends PlatformInterface {
         'isFeatureSupported is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebViewFeature.isStartupFeatureSupported}
+  ///{@template webview_inapp_platform_interface.PlatformWebViewFeature.isStartupFeatureSupported}
   ///Return whether a startup feature is supported at run-time.
   ///On devices running Android version `Build.VERSION_CODES.LOLLIPOP` and higher,
   ///this will check whether a startup feature is supported,
@@ -109,7 +109,7 @@ abstract class PlatformWebViewFeature extends PlatformInterface {
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformWebViewFeature}
+///{@macro webview_inapp_platform_interface.PlatformWebViewFeature}
 @ExchangeableEnum()
 class WebViewFeature_ {
   // ignore: unused_field
@@ -333,11 +333,11 @@ class WebViewFeature_ {
       const WebViewFeature_._internal(
           "STARTUP_FEATURE_SET_DIRECTORY_BASE_PATHS");
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebViewFeature.isFeatureSupported}
+  ///{@macro webview_inapp_platform_interface.PlatformWebViewFeature.isFeatureSupported}
   static Future<bool> isFeatureSupported(WebViewFeature feature) =>
       PlatformWebViewFeature.static().isFeatureSupported(feature);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebViewFeature.isStartupFeatureSupported}
+  ///{@macro webview_inapp_platform_interface.PlatformWebViewFeature.isStartupFeatureSupported}
   static Future<bool> isStartupFeatureSupported(
           WebViewFeature startupFeature) =>
       PlatformWebViewFeature.static().isStartupFeatureSupported(startupFeature);

@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_inappwebview_platform_interface/src/types/disposable.dart';
+import 'package:webview_inapp_platform_interface/src/types/disposable.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import '../inappwebview_platform.dart';
 import 'platform_web_message_port.dart';
@@ -14,13 +14,13 @@ class PlatformWebMessageChannelCreationParams {
   const PlatformWebMessageChannelCreationParams(
       {required this.id, required this.port1, required this.port2});
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessageChannel.id}
+  ///{@macro webview_inapp_platform_interface.PlatformWebMessageChannel.id}
   final String id;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessageChannel.port1}
+  ///{@macro webview_inapp_platform_interface.PlatformWebMessageChannel.port1}
   final PlatformWebMessagePort port1;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebMessageChannel.port2}
+  ///{@macro webview_inapp_platform_interface.PlatformWebMessageChannel.port2}
   final PlatformWebMessagePort port2;
 
   @override
@@ -29,7 +29,7 @@ class PlatformWebMessageChannelCreationParams {
   }
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformWebMessageChannel}
+///{@template webview_inapp_platform_interface.PlatformWebMessageChannel}
 ///The representation of the [HTML5 message channels](https://html.spec.whatwg.org/multipage/web-messaging.html#message-channels).
 ///
 ///**Officially Supported Platforms/Implementations**:
@@ -82,17 +82,17 @@ abstract class PlatformWebMessageChannel extends PlatformInterface
   /// The parameters used to initialize the [PlatformWebMessageChannel].
   final PlatformWebMessageChannelCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebMessageChannel.id}
+  ///{@template webview_inapp_platform_interface.PlatformWebMessageChannel.id}
   ///Message Channel ID used internally.
   ///{@endtemplate}
   String get id => params.id;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebMessageChannel.port1}
+  ///{@template webview_inapp_platform_interface.PlatformWebMessageChannel.port1}
   ///The first [PlatformWebMessagePort] object of the channel.
   ///{@endtemplate}
   PlatformWebMessagePort get port1 => params.port1;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebMessageChannel.port2}
+  ///{@template webview_inapp_platform_interface.PlatformWebMessageChannel.port2}
   ///The second [PlatformWebMessagePort] object of the channel.
   ///{@endtemplate}
   PlatformWebMessagePort get port2 => params.port2;
@@ -102,7 +102,7 @@ abstract class PlatformWebMessageChannel extends PlatformInterface
         'fromMap is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformWebMessageChannel}
+  ///{@template webview_inapp_platform_interface.PlatformWebMessageChannel}
   ///Disposes the web message channel.
   ///{@endtemplate}
   @override

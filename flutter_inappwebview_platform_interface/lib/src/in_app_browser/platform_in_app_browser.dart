@@ -5,7 +5,7 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/src/types/disposable.dart';
+import 'package:webview_inapp_platform_interface/src/types/disposable.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import '../context_menu/context_menu.dart';
@@ -41,19 +41,19 @@ class PlatformInAppBrowserCreationParams {
     this.webViewEnvironment,
   });
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.contextMenu}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.contextMenu}
   final ContextMenu? contextMenu;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.pullToRefreshController}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.pullToRefreshController}
   final PlatformPullToRefreshController? pullToRefreshController;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.findInteractionController}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.findInteractionController}
   final PlatformFindInteractionController? findInteractionController;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.initialUserScripts}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.initialUserScripts}
   final UnmodifiableListView<UserScript>? initialUserScripts;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.windowId}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.windowId}
   final int? windowId;
 
   ///Used to create the [PlatformInAppBrowser] using the specified environment.
@@ -63,7 +63,7 @@ class PlatformInAppBrowserCreationParams {
   final PlatformWebViewEnvironment? webViewEnvironment;
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser}
+///{@template webview_inapp_platform_interface.PlatformInAppBrowser}
 ///This class represents a native WebView displayed on top of the Flutter App,
 ///so it's not integrated into the Flutter widget tree.
 ///It uses the native WebView of the platform.
@@ -83,14 +83,14 @@ abstract class PlatformInAppBrowser extends PlatformInterface
   /// Event handler object that handles the [PlatformInAppBrowser] events.
   PlatformInAppBrowserEvents? eventHandler;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.id}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.id}
   ///View ID used internally.
   ///{@endtemplate}
   String get id {
     throw UnimplementedError('id is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.contextMenu}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.contextMenu}
   ///Context menu used by the browser. It should be set before opening the browser.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -99,7 +99,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
   ///{@endtemplate}
   ContextMenu? get contextMenu => params.contextMenu;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.pullToRefreshController}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.pullToRefreshController}
   ///Represents the pull-to-refresh feature controller.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -109,7 +109,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
   PlatformPullToRefreshController? get pullToRefreshController =>
       params.pullToRefreshController;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.findInteractionController}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.findInteractionController}
   ///Represents the find interaction feature controller.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -120,7 +120,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
   PlatformFindInteractionController? get findInteractionController =>
       params.findInteractionController;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.initialUserScripts}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.initialUserScripts}
   ///Initial list of user scripts to be loaded at start or end of a page loading.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -132,7 +132,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
   UnmodifiableListView<UserScript>? get initialUserScripts =>
       params.initialUserScripts;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.windowId}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.windowId}
   ///The window id of a [CreateWindowAction.windowId].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -142,7 +142,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
   ///{@endtemplate}
   int? get windowId => params.windowId;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.webViewController}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.webViewController}
   ///WebView Controller that can be used to access the [PlatformInAppWebViewController] API.
   ///When [onExit] is fired, this will be `null` and cannot be used anymore.
   ///{@endtemplate}
@@ -193,7 +193,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
   /// The parameters used to initialize the [PlatformInAppBrowser].
   final PlatformInAppBrowserCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.openUrlRequest}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.openUrlRequest}
   ///Opens the [PlatformInAppBrowser] instance with an [urlRequest].
   ///
   ///[urlRequest]: The [urlRequest] to load.
@@ -217,7 +217,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'openUrlRequest is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.openFile}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.openFile}
   ///Opens the [PlatformInAppBrowser] instance with the given [assetFilePath] file.
   ///
   ///[options]: Options for the [PlatformInAppBrowser].
@@ -271,7 +271,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'openFile is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.openData}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.openData}
   ///Opens the [PlatformInAppBrowser] instance with [data] as a content, using [baseUrl] as the base URL for it.
   ///
   ///The [mimeType] parameter specifies the format of the data. The default value is `"text/html"`.
@@ -304,7 +304,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'openData is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.openWithSystemBrowser}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.openWithSystemBrowser}
   ///This is a static method that opens an [url] in the system browser. You wont be able to use the [PlatformInAppBrowser] methods here!
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -318,7 +318,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'openWithSystemBrowser is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.addMenuItem}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.addMenuItem}
   ///Adds a [InAppBrowserMenuItem] to the menu.
   ///If the browser is already open,
   ///it will take effect the next time it is opened.
@@ -332,7 +332,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'addMenuItem is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.addMenuItems}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.addMenuItems}
   ///Adds a list of [InAppBrowserMenuItem] to the menu.
   ///If the browser is already open,
   ///it will take effect the next time it is opened.
@@ -346,7 +346,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'addMenuItems is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.removeMenuItem}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.removeMenuItem}
   ///Removes the [menuItem] from the list.
   ///Returns `true` if it was in the list, `false` otherwise.
   ///If the browser is already open,
@@ -361,7 +361,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'removeMenuItem is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.removeMenuItems}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.removeMenuItems}
   ///Removes a list of [menuItems] from the list.
   ///If the browser is already open,
   ///it will take effect the next time it is opened.
@@ -375,7 +375,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'removeMenuItems is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.removeAllMenuItem}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.removeAllMenuItem}
   ///Removes all the menu items from the list.
   ///If the browser is already open,
   ///it will take effect the next time it is opened.
@@ -389,7 +389,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'removeAllMenuItem is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.hasMenuItem}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.hasMenuItem}
   ///Returns `true` if the [menuItem] has been already added, otherwise `false`.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -401,7 +401,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'hasMenuItem is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.show}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.show}
   ///Displays a [PlatformInAppBrowser] window that was opened hidden. Calling this has no effect if the [PlatformInAppBrowser] was already visible.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -414,7 +414,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
     throw UnimplementedError('show is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.hide}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.hide}
   ///Hides the [PlatformInAppBrowser] window. Calling this has no effect if the [PlatformInAppBrowser] was already hidden.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -427,7 +427,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
     throw UnimplementedError('hide is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.close}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.close}
   ///Closes the [PlatformInAppBrowser] window.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -441,7 +441,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'close is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.isHidden}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.isHidden}
   ///Check if the Web View of the [PlatformInAppBrowser] instance is hidden.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -455,7 +455,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'isHidden is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.setOptions}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.setOptions}
   ///Use [setSettings] instead.
   ///{@endtemplate}
   @Deprecated('Use setSettings instead')
@@ -464,7 +464,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'setOptions is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.getOptions}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.getOptions}
   ///Use [getSettings] instead.
   ///{@endtemplate}
   @Deprecated('Use getSettings instead')
@@ -473,7 +473,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'getOptions is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.setSettings}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.setSettings}
   ///Sets the [PlatformInAppBrowser] settings with the new [settings] and evaluates them.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -486,7 +486,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'setSettings is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.getSettings}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.getSettings}
   ///Gets the current [PlatformInAppBrowser] settings. Returns `null` if it wasn't able to get them.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -499,7 +499,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'getSettings is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.isOpened}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.isOpened}
   ///Returns `true` if the [PlatformInAppBrowser] instance is opened, otherwise `false`.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -513,7 +513,7 @@ abstract class PlatformInAppBrowser extends PlatformInterface
         'isOpened is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformInAppBrowser.dispose}
+  ///{@template webview_inapp_platform_interface.PlatformInAppBrowser.dispose}
   ///Disposes the channel and controllers.
   ///{@endtemplate}
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 import 'web_message_channel.dart';
 
@@ -28,7 +28,7 @@ class AndroidWebMessagePortCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformWebMessagePort}
+///{@macro webview_inapp_platform_interface.PlatformWebMessagePort}
 class AndroidWebMessagePort extends PlatformWebMessagePort {
   WebMessageCallback? _onMessage;
   late AndroidWebMessageChannel _webMessageChannel;

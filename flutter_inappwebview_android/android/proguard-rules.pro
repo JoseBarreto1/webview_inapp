@@ -8,10 +8,11 @@
     public boolean *(android.webkit.WebView, java.lang.String);
     public void *(android.webkit.webView, jav.lang.String);
 }
--keepclassmembers class com.pichillilorenzo.flutter_inappwebview_android$JavaScriptBridgeInterface {
+-keepclassmembers class com.pichillilorenzo.webview_inapp_android$JavaScriptBridgeInterface {
      <fields>;
      <methods>;
      public *;
      private *;
 }
--keep class com.pichillilorenzo.flutter_inappwebview_android.** { *; }
+-keep class com.pichillilorenzo.webview_inapp_android.** { *; }
+-dontwarn android.window.BackEvent

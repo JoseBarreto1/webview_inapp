@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:webview_inapp/flutter_inappwebview.dart';
 
 import 'package:flutter_inappwebview_example/chrome_safari_browser_example.screen.dart';
 import 'package:flutter_inappwebview_example/headless_in_app_webview.screen.dart';
@@ -25,12 +25,11 @@ Future main() async {
 
   if (!kIsWeb && defaultTargetPlatform == TargetPlatform.windows) {
     final availableVersion = await WebViewEnvironment.getAvailableVersion();
-    assert(availableVersion != null, 'Failed to find an installed WebView2 runtime or non-stable Microsoft Edge installation.');
+    assert(availableVersion != null,
+        'Failed to find an installed WebView2 runtime or non-stable Microsoft Edge installation.');
 
-    webViewEnvironment = await WebViewEnvironment.create(settings:
-      WebViewEnvironmentSettings(
-          userDataFolder: 'custom_path'
-      ));
+    webViewEnvironment = await WebViewEnvironment.create(
+        settings: WebViewEnvironmentSettings(userDataFolder: 'custom_path'));
   }
 
   if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {

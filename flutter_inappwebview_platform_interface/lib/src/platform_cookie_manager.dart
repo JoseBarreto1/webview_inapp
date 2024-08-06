@@ -26,7 +26,7 @@ class PlatformCookieManagerCreationParams {
   final PlatformWebViewEnvironment? webViewEnvironment;
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformCookieManager}
+///{@template webview_inapp_platform_interface.PlatformCookieManager}
 ///Class that implements a singleton object (shared instance) which manages the cookies used by WebView instances.
 ///On Android, it is implemented using [CookieManager](https://developer.android.com/reference/android/webkit/CookieManager).
 ///On iOS, it is implemented using [WKHTTPCookieStore](https://developer.apple.com/documentation/webkit/wkhttpcookiestore).
@@ -71,7 +71,7 @@ abstract class PlatformCookieManager extends PlatformInterface {
   /// The parameters used to initialize the [PlatformCookieManager].
   final PlatformCookieManagerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformCookieManager.setCookie}
+  ///{@template webview_inapp_platform_interface.PlatformCookieManager.setCookie}
   ///Sets a cookie for the given [url]. Any existing cookie with the same [host], [path] and [name] will be replaced with the new cookie.
   ///The cookie being set will be ignored if it is expired.
   ///
@@ -115,7 +115,7 @@ abstract class PlatformCookieManager extends PlatformInterface {
         'setCookie is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformCookieManager.getCookies}
+  ///{@template webview_inapp_platform_interface.PlatformCookieManager.getCookies}
   ///Gets all the cookies for the given [url].
   ///
   ///[webViewController] is used for getting the cookies (also session-only cookies) using JavaScript (cookies with `isHttpOnly` enabled cannot be found, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies)
@@ -146,7 +146,7 @@ abstract class PlatformCookieManager extends PlatformInterface {
         'getCookies is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformCookieManager.getCookie}
+  ///{@template webview_inapp_platform_interface.PlatformCookieManager.getCookie}
   ///Gets a cookie by its [name] for the given [url].
   ///
   ///[webViewController] is used for getting the cookie (also session-only cookie) using JavaScript (cookie with `isHttpOnly` enabled cannot be found, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies)
@@ -178,7 +178,7 @@ abstract class PlatformCookieManager extends PlatformInterface {
         'getCookie is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformCookieManager.deleteCookie}
+  ///{@template webview_inapp_platform_interface.PlatformCookieManager.deleteCookie}
   ///Removes a cookie by its [name] for the given [url], [domain] and [path].
   ///
   ///The default value of [path] is `"/"`.
@@ -216,7 +216,7 @@ abstract class PlatformCookieManager extends PlatformInterface {
         'deleteCookie is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformCookieManager.deleteCookies}
+  ///{@template webview_inapp_platform_interface.PlatformCookieManager.deleteCookies}
   ///Removes all cookies for the given [url], [domain] and [path].
   ///
   ///The default value of [path] is `"/"`.
@@ -253,7 +253,7 @@ abstract class PlatformCookieManager extends PlatformInterface {
         'deleteCookies is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformCookieManager.deleteAllCookies}
+  ///{@template webview_inapp_platform_interface.PlatformCookieManager.deleteAllCookies}
   ///Removes all cookies.
   ///
   ///The return value indicates whether any cookies were removed.
@@ -274,7 +274,7 @@ abstract class PlatformCookieManager extends PlatformInterface {
         'deleteAllCookies is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformCookieManager.getAllCookies}
+  ///{@template webview_inapp_platform_interface.PlatformCookieManager.getAllCookies}
   ///Fetches all stored cookies.
   ///
   ///**NOTE for iOS**: available on iOS 11.0+.
@@ -290,7 +290,7 @@ abstract class PlatformCookieManager extends PlatformInterface {
         'getAllCookies is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformCookieManager.removeSessionCookies}
+  ///{@template webview_inapp_platform_interface.PlatformCookieManager.removeSessionCookies}
   ///Removes all session cookies, which are cookies without an expiration date.
   ///
   ///The return value indicates whether any cookies were removed.

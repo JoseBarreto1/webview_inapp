@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 /// Object specifying creation parameters for creating a [AndroidFindInteractionController].
 ///
@@ -24,7 +24,7 @@ class AndroidFindInteractionControllerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformFindInteractionController}
+///{@macro webview_inapp_platform_interface.PlatformFindInteractionController}
 class AndroidFindInteractionController extends PlatformFindInteractionController
     with ChannelController {
   /// Constructs a [AndroidFindInteractionController].
@@ -65,40 +65,40 @@ class AndroidFindInteractionController extends PlatformFindInteractionController
     return null;
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformFindInteractionController.findAll}
+  ///{@macro webview_inapp_platform_interface.PlatformFindInteractionController.findAll}
   Future<void> findAll({String? find}) async {
     Map<String, dynamic> args = <String, dynamic>{};
     args.putIfAbsent('find', () => find);
     await channel?.invokeMethod('findAll', args);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformFindInteractionController.findNext}
+  ///{@macro webview_inapp_platform_interface.PlatformFindInteractionController.findNext}
   Future<void> findNext({bool forward = true}) async {
     Map<String, dynamic> args = <String, dynamic>{};
     args.putIfAbsent('forward', () => forward);
     await channel?.invokeMethod('findNext', args);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformFindInteractionController.clearMatches}
+  ///{@macro webview_inapp_platform_interface.PlatformFindInteractionController.clearMatches}
   Future<void> clearMatches() async {
     Map<String, dynamic> args = <String, dynamic>{};
     await channel?.invokeMethod('clearMatches', args);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformFindInteractionController.setSearchText}
+  ///{@macro webview_inapp_platform_interface.PlatformFindInteractionController.setSearchText}
   Future<void> setSearchText(String? searchText) async {
     Map<String, dynamic> args = <String, dynamic>{};
     args.putIfAbsent('searchText', () => searchText);
     await channel?.invokeMethod('setSearchText', args);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformFindInteractionController.getSearchText}
+  ///{@macro webview_inapp_platform_interface.PlatformFindInteractionController.getSearchText}
   Future<String?> getSearchText() async {
     Map<String, dynamic> args = <String, dynamic>{};
     return await channel?.invokeMethod<String?>('getSearchText', args);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformFindInteractionController.getActiveFindSession}
+  ///{@macro webview_inapp_platform_interface.PlatformFindInteractionController.getActiveFindSession}
   Future<FindSession?> getActiveFindSession() async {
     Map<String, dynamic> args = <String, dynamic>{};
     Map<String, dynamic>? result =
@@ -107,7 +107,7 @@ class AndroidFindInteractionController extends PlatformFindInteractionController
     return FindSession.fromMap(result);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformFindInteractionController.dispose}
+  ///{@macro webview_inapp_platform_interface.PlatformFindInteractionController.dispose}
   @override
   void dispose({bool isKeepAlive = false}) {
     disposeChannel(removeMethodCallHandler: !isKeepAlive);

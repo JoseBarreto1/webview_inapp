@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer}
+///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer}
 class InAppLocalhostServer {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer}
   InAppLocalhostServer({
     int port = 8080,
     String directoryIndex = 'index.html',
@@ -30,24 +30,24 @@ class InAppLocalhostServer {
   /// Implementation of [PlatformInAppLocalhostServer] for the current platform.
   final PlatformInAppLocalhostServer platform;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.port}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.port}
   int get port => platform.port;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.directoryIndex}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.directoryIndex}
   String get directoryIndex => platform.directoryIndex;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.documentRoot}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.documentRoot}
   String get documentRoot => platform.documentRoot;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.shared}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.shared}
   bool get shared => platform.shared;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.start}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.start}
   Future<void> start() => platform.start();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.close}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.close}
   Future<void> close() => platform.close();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppLocalhostServer.isRunning}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppLocalhostServer.isRunning}
   bool isRunning() => platform.isRunning();
 }

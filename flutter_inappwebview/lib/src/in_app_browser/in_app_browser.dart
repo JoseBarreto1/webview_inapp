@@ -5,7 +5,7 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 import '../find_interaction/find_interaction_controller.dart';
 import '../pull_to_refresh/main.dart';
@@ -13,11 +13,11 @@ import '../pull_to_refresh/main.dart';
 import '../in_app_webview/in_app_webview_controller.dart';
 import '../webview_environment/webview_environment.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser}
+///{@macro webview_inapp_platform_interface.PlatformInAppBrowser}
 class InAppBrowser implements PlatformInAppBrowserEvents {
   /// Constructs a [InAppBrowser].
   ///
-  /// {@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser}
+  /// {@macro webview_inapp_platform_interface.PlatformInAppBrowser}
   InAppBrowser({
     ContextMenu? contextMenu,
     PullToRefreshController? pullToRefreshController,
@@ -51,13 +51,13 @@ class InAppBrowser implements PlatformInAppBrowserEvents {
   /// Implementation of [PlatformInAppBrowser] for the current platform.
   final PlatformInAppBrowser platform;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.id}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.id}
   String get id => platform.id;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.contextMenu}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.contextMenu}
   ContextMenu? get contextMenu => platform.contextMenu;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.pullToRefreshController}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.pullToRefreshController}
   PullToRefreshController? get pullToRefreshController {
     final pullToRefreshControllerPlatform = platform.pullToRefreshController;
     if (pullToRefreshControllerPlatform == null) {
@@ -67,7 +67,7 @@ class InAppBrowser implements PlatformInAppBrowserEvents {
         platform: pullToRefreshControllerPlatform);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.findInteractionController}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.findInteractionController}
   FindInteractionController? get findInteractionController {
     final findInteractionControllerPlatform =
         platform.findInteractionController;
@@ -78,14 +78,14 @@ class InAppBrowser implements PlatformInAppBrowserEvents {
         platform: findInteractionControllerPlatform);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.initialUserScripts}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.initialUserScripts}
   UnmodifiableListView<UserScript>? get initialUserScripts =>
       platform.initialUserScripts;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.windowId}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.windowId}
   int? get windowId => platform.windowId;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.webViewController}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.webViewController}
   InAppWebViewController? get webViewController {
     final webViewControllerPlatform = platform.webViewController;
     if (webViewControllerPlatform == null) {
@@ -95,7 +95,7 @@ class InAppBrowser implements PlatformInAppBrowserEvents {
         platform: webViewControllerPlatform);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.openUrlRequest}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.openUrlRequest}
   Future<void> openUrlRequest(
       {required URLRequest urlRequest,
       @Deprecated('Use settings instead') InAppBrowserClassOptions? options,
@@ -105,7 +105,7 @@ class InAppBrowser implements PlatformInAppBrowserEvents {
         urlRequest: urlRequest, options: options, settings: settings);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.openFile}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.openFile}
   Future<void> openFile(
       {required String assetFilePath,
       @Deprecated('Use settings instead') InAppBrowserClassOptions? options,
@@ -115,7 +115,7 @@ class InAppBrowser implements PlatformInAppBrowserEvents {
         assetFilePath: assetFilePath, options: options, settings: settings);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.openData}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.openData}
   Future<void> openData(
       {required String data,
       String mimeType = "text/html",
@@ -137,65 +137,65 @@ class InAppBrowser implements PlatformInAppBrowserEvents {
         settings: settings);
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.openWithSystemBrowser}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.openWithSystemBrowser}
   static Future<void> openWithSystemBrowser({required WebUri url}) =>
       PlatformInAppBrowser.static().openWithSystemBrowser(url: url);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.addMenuItem}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.addMenuItem}
   void addMenuItem(InAppBrowserMenuItem menuItem) =>
       platform.addMenuItem(menuItem);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.addMenuItems}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.addMenuItems}
   void addMenuItems(List<InAppBrowserMenuItem> menuItems) =>
       platform.addMenuItems(menuItems);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.removeMenuItem}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.removeMenuItem}
   bool removeMenuItem(InAppBrowserMenuItem menuItem) =>
       platform.removeMenuItem(menuItem);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.removeMenuItems}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.removeMenuItems}
   void removeMenuItems(List<InAppBrowserMenuItem> menuItems) =>
       platform.removeMenuItems(menuItems);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.removeAllMenuItem}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.removeAllMenuItem}
   void removeAllMenuItem() => platform.removeAllMenuItem();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.hasMenuItem}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.hasMenuItem}
   bool hasMenuItem(InAppBrowserMenuItem menuItem) =>
       platform.hasMenuItem(menuItem);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.show}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.show}
   Future<void> show() => platform.show();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.hide}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.hide}
   Future<void> hide() => platform.hide();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.close}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.close}
   Future<void> close() => platform.close();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.isHidden}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.isHidden}
   Future<bool> isHidden() => platform.isHidden();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.setOptions}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.setOptions}
   @Deprecated('Use setSettings instead')
   Future<void> setOptions({required InAppBrowserClassOptions options}) =>
       platform.setOptions(options: options);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.getOptions}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.getOptions}
   @Deprecated('Use getSettings instead')
   Future<InAppBrowserClassOptions?> getOptions() => platform.getOptions();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.setSettings}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.setSettings}
   Future<void> setSettings({required InAppBrowserClassSettings settings}) =>
       platform.setSettings(settings: settings);
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.getSettings}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.getSettings}
   Future<InAppBrowserClassSettings?> getSettings() => platform.getSettings();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.isOpened}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.isOpened}
   bool isOpened() => platform.isOpened();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformInAppBrowser.dispose}
+  ///{@macro webview_inapp_platform_interface.PlatformInAppBrowser.dispose}
   @mustCallSuper
   void dispose() => platform.dispose();
 

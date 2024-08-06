@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
-///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession}
+///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession}
 class WebAuthenticationSession {
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession}
   WebAuthenticationSession()
       : this.fromPlatformCreationParams(
             params: PlatformWebAuthenticationSessionCreationParams());
@@ -23,24 +23,24 @@ class WebAuthenticationSession {
   /// Implementation of [PlatformWebAuthenticationSession] for the current platform.
   final PlatformWebAuthenticationSession platform;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.id}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.id}
   String get id => platform.id;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.url}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.url}
   WebUri get url => platform.url;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.callbackURLScheme}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.callbackURLScheme}
   String? get callbackURLScheme => platform.callbackURLScheme;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.initialSettings}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.initialSettings}
   WebAuthenticationSessionSettings? get initialSettings =>
       platform.initialSettings;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.onComplete}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.onComplete}
   WebAuthenticationSessionCompletionHandler get onComplete =>
       platform.onComplete;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.create}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.create}
   static Future<WebAuthenticationSession> create(
       {required WebUri url,
       String? callbackURLScheme,
@@ -54,19 +54,19 @@ class WebAuthenticationSession {
             initialSettings: initialSettings));
   }
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.canStart}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.canStart}
   Future<bool> canStart() => platform.canStart();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.start}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.start}
   Future<bool> start() => platform.start();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.cancel}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.cancel}
   Future<void> cancel() => platform.cancel();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.dispose}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.dispose}
   Future<void> dispose() => platform.dispose();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformWebAuthenticationSession.isAvailable}
+  ///{@macro webview_inapp_platform_interface.PlatformWebAuthenticationSession.isAvailable}
   static Future<bool> isAvailable() =>
       PlatformWebAuthenticationSession.static().isAvailable();
 }

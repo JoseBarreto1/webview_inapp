@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_inappwebview_internal_annotations/flutter_inappwebview_internal_annotations.dart';
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'inappwebview_platform.dart';
@@ -51,11 +51,11 @@ class PlatformPathHandlerCreationParams {
   /// Used by the platform implementation to create a new [PlatformPathHandler].
   const PlatformPathHandlerCreationParams({required this.path});
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformPathHandler.path}
+  ///{@macro webview_inapp_platform_interface.PlatformPathHandler.path}
   final String path;
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformPathHandler}
+///{@template webview_inapp_platform_interface.PlatformPathHandler}
 ///A handler that produces responses for a registered path.
 ///
 ///Implement this interface to handle other use-cases according to your app's needs.
@@ -64,14 +64,14 @@ abstract class PlatformPathHandler {
   /// Event handler object that handles the [PlatformPathHandler] events.
   late final PlatformPathHandlerEvents? eventHandler;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPathHandler.type}
+  ///{@template webview_inapp_platform_interface.PlatformPathHandler.type}
   ///The path handler type.
   ///{@endtemplate}
   String get type {
     throw UnimplementedError('type is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPathHandler.path}
+  ///{@template webview_inapp_platform_interface.PlatformPathHandler.path}
   ///The suffix path to be handled.
   ///
   ///The path should start and end with a `"/"` and it shouldn't collide with a real web path.
@@ -93,7 +93,7 @@ abstract class PlatformPathHandler {
 
 ///Interface path handler events.
 abstract class PlatformPathHandlerEvents {
-  ///{@template flutter_inappwebview_platform_interface.PlatformPathHandler.handle}
+  ///{@template webview_inapp_platform_interface.PlatformPathHandler.handle}
   ///Handles the requested URL by returning the appropriate response.
   ///
   ///Returning a `null` value means that the handler decided not to handle this path.
@@ -130,7 +130,7 @@ class PlatformAssetsPathHandlerCreationParams
   }
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformAssetsPathHandler}
+///{@template webview_inapp_platform_interface.PlatformAssetsPathHandler}
 ///Handler class to open a file from assets directory in the application APK.
 ///
 ///Opens the requested file from the application's assets directory.
@@ -203,7 +203,7 @@ class PlatformResourcesPathHandlerCreationParams
   }
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformResourcesPathHandler}
+///{@template webview_inapp_platform_interface.PlatformResourcesPathHandler}
 ///Handler class to open a file from resources directory in the application APK.
 ///
 ///Opens the requested file from application's resources directory.
@@ -283,7 +283,7 @@ class PlatformInternalStoragePathHandlerCreationParams
   final String directory;
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformInternalStoragePathHandler}
+///{@template webview_inapp_platform_interface.PlatformInternalStoragePathHandler}
 ///Handler class to open files from application internal storage.
 ///For more information about android storage please refer to
 ///[Android Developers Docs: Data and file storage overview](https://developer.android.com/guide/topics/data/data-storage).
@@ -365,7 +365,7 @@ class PlatformCustomPathHandlerCreationParams
   }
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformCustomPathHandler}
+///{@template webview_inapp_platform_interface.PlatformCustomPathHandler}
 ///Custom handler class used to implement a custom logic to open a file.
 ///
 ///The matched prefix path used shouldn't be a prefix of a real web path.

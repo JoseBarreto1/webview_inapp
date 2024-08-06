@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'package:flutter_inappwebview_platform_interface/flutter_inappwebview_platform_interface.dart';
+import 'package:webview_inapp_platform_interface/webview_inapp_platform_interface.dart';
 
 /// Object specifying creation parameters for creating a [AndroidCookieManager].
 ///
@@ -27,7 +27,7 @@ class AndroidCookieManagerCreationParams
   }
 }
 
-///{@macro flutter_inappwebview_platform_interface.PlatformCookieManager}
+///{@macro webview_inapp_platform_interface.PlatformCookieManager}
 class AndroidCookieManager extends PlatformCookieManager
     with ChannelController {
   /// Creates a new [AndroidCookieManager].

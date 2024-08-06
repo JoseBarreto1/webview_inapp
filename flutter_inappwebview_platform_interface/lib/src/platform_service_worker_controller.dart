@@ -14,7 +14,7 @@ class PlatformServiceWorkerControllerCreationParams {
   const PlatformServiceWorkerControllerCreationParams();
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController}
+///{@template webview_inapp_platform_interface.PlatformServiceWorkerController}
 ///Class that manages Service Workers used by `WebView`.
 ///
 ///**NOTE**: available on Android 24+.
@@ -70,12 +70,12 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
   /// The parameters used to initialize the [PlatformServiceWorkerController].
   final PlatformServiceWorkerControllerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController.serviceWorkerClient}
+  ///{@template webview_inapp_platform_interface.PlatformServiceWorkerController.serviceWorkerClient}
   ///Service Worker client.
   ///{@endtemplate}
   ServiceWorkerClient? get serviceWorkerClient;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController.setServiceWorkerClient}
+  ///{@template webview_inapp_platform_interface.PlatformServiceWorkerController.setServiceWorkerClient}
   ///Sets the client to capture service worker related callbacks.
   ///A [ServiceWorkerClient] should be set before any service workers are active, e.g. a safe place is before any WebView instances are created or pages loaded.
   ///
@@ -87,7 +87,7 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
         'setServiceWorkerClient is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController.getAllowContentAccess}
+  ///{@template webview_inapp_platform_interface.PlatformServiceWorkerController.getAllowContentAccess}
   ///Gets whether Service Workers support content URL access.
   ///This method should only be called if [WebViewFeature.isFeatureSupported] returns `true` for [WebViewFeature.SERVICE_WORKER_CONTENT_ACCESS].
   ///
@@ -100,7 +100,7 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
         'getAllowContentAccess is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController.getAllowFileAccess}
+  ///{@template webview_inapp_platform_interface.PlatformServiceWorkerController.getAllowFileAccess}
   ///Gets whether Service Workers support file access.
   ///This method should only be called if [WebViewFeature.isFeatureSupported] returns `true` for [WebViewFeature.SERVICE_WORKER_FILE_ACCESS].
   ///
@@ -113,7 +113,7 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
         'getAllowFileAccess is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController.getBlockNetworkLoads}
+  ///{@template webview_inapp_platform_interface.PlatformServiceWorkerController.getBlockNetworkLoads}
   ///Gets whether Service Workers are prohibited from loading any resources from the network.
   ///This method should only be called if [WebViewFeature.isFeatureSupported] returns `true` for [WebViewFeature.SERVICE_WORKER_BLOCK_NETWORK_LOADS].
   ///
@@ -126,7 +126,7 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
         'getBlockNetworkLoads is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController.getCacheMode}
+  ///{@template webview_inapp_platform_interface.PlatformServiceWorkerController.getCacheMode}
   ///Gets the current setting for overriding the cache mode.
   ///This method should only be called if [WebViewFeature.isFeatureSupported] returns `true` for [WebViewFeature.SERVICE_WORKER_CACHE_MODE].
   ///
@@ -139,7 +139,7 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
         'getCacheMode is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController.setAllowContentAccess}
+  ///{@template webview_inapp_platform_interface.PlatformServiceWorkerController.setAllowContentAccess}
   ///Enables or disables content URL access from Service Workers.
   ///This method should only be called if [WebViewFeature.isFeatureSupported] returns `true` for [WebViewFeature.SERVICE_WORKER_CONTENT_ACCESS].
   ///
@@ -152,7 +152,7 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
         'setAllowContentAccess is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController.setAllowFileAccess}
+  ///{@template webview_inapp_platform_interface.PlatformServiceWorkerController.setAllowFileAccess}
   ///Enables or disables file access within Service Workers.
   ///This method should only be called if [WebViewFeature.isFeatureSupported] returns `true` for [WebViewFeature.SERVICE_WORKER_FILE_ACCESS].
   ///
@@ -165,7 +165,7 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
         'setAllowFileAccess is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController.setBlockNetworkLoads}
+  ///{@template webview_inapp_platform_interface.PlatformServiceWorkerController.setBlockNetworkLoads}
   ///Sets whether Service Workers should not load resources from the network.
   ///This method should only be called if [WebViewFeature.isFeatureSupported] returns `true` for [WebViewFeature.SERVICE_WORKER_BLOCK_NETWORK_LOADS].
   ///
@@ -178,7 +178,7 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
         'setBlockNetworkLoads is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformServiceWorkerController.setCacheMode}
+  ///{@template webview_inapp_platform_interface.PlatformServiceWorkerController.setCacheMode}
   ///Overrides the way the cache is used.
   ///This method should only be called if [WebViewFeature.isFeatureSupported] returns `true` for [WebViewFeature.SERVICE_WORKER_CACHE_MODE].
   ///
@@ -192,7 +192,7 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
   }
 }
 
-///{@template flutter_inappwebview_platform_interface.ServiceWorkerClient}
+///{@template webview_inapp_platform_interface.ServiceWorkerClient}
 ///Class used by clients to capture Service Worker related callbacks.
 ///
 ///**NOTE**: available on Android 24+.
@@ -201,7 +201,7 @@ abstract class PlatformServiceWorkerController extends PlatformInterface {
 ///- Android native WebView ([Official API - ServiceWorkerClientCompat](https://developer.android.com/reference/androidx/webkit/ServiceWorkerClientCompat))
 ///{@endtemplate}
 class ServiceWorkerClient {
-  ///{@template flutter_inappwebview_platform_interface.ServiceWorkerClient.shouldInterceptRequest}
+  ///{@template webview_inapp_platform_interface.ServiceWorkerClient.shouldInterceptRequest}
   ///Notify the host application of a resource request and allow the application to return the data.
   ///If the return value is `null`, the Service Worker will continue to load the resource as usual.
   ///Otherwise, the return response and data will be used.

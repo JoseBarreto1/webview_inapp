@@ -18,7 +18,7 @@ class PlatformProxyControllerCreationParams {
   const PlatformProxyControllerCreationParams();
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformProxyController}
+///{@template webview_inapp_platform_interface.PlatformProxyController}
 ///Manages setting and clearing a process-specific override for the Android system-wide proxy settings that govern network requests made by `WebView`.
 ///
 ///`WebView` may make network requests in order to fetch content that is not otherwise read from the file system or provided directly by application code.
@@ -60,7 +60,7 @@ abstract class PlatformProxyController extends PlatformInterface {
   /// The parameters used to initialize the [PlatformProxyController].
   final PlatformProxyControllerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformProxyController.setProxyOverride}
+  ///{@template webview_inapp_platform_interface.PlatformProxyController.setProxyOverride}
   ///Sets [ProxySettings] which will be used by all `WebView`s in the app.
   ///URLs that match patterns in the bypass list will not be directed to any proxy.
   ///Instead, the request will be made directly to the origin specified by the URL.
@@ -74,7 +74,7 @@ abstract class PlatformProxyController extends PlatformInterface {
         'setProxyOverride is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformProxyController.clearProxyOverride}
+  ///{@template webview_inapp_platform_interface.PlatformProxyController.clearProxyOverride}
   ///Clears the proxy settings.
   ///Network connections are not guaranteed to immediately use the new proxy setting; wait for the method to return before loading a page.
   ///

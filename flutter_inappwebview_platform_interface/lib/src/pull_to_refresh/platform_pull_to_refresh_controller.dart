@@ -23,18 +23,18 @@ class PlatformPullToRefreshControllerCreationParams {
       : this.options = options ?? PullToRefreshOptions(),
         this.settings = settings ?? PullToRefreshSettings();
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformPullToRefreshController.options}
+  ///{@macro webview_inapp_platform_interface.PlatformPullToRefreshController.options}
   @Deprecated("Use settings instead")
   late PullToRefreshOptions options;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformPullToRefreshController.settings}
+  ///{@macro webview_inapp_platform_interface.PlatformPullToRefreshController.settings}
   late PullToRefreshSettings settings;
 
-  ///{@macro flutter_inappwebview_platform_interface.PlatformPullToRefreshController.onRefresh}
+  ///{@macro webview_inapp_platform_interface.PlatformPullToRefreshController.onRefresh}
   final void Function()? onRefresh;
 }
 
-///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController}
+///{@template webview_inapp_platform_interface.PlatformPullToRefreshController}
 ///A standard controller that can initiate the refreshing of a scroll view’s contents.
 ///This should be used whenever the user can refresh the contents of a WebView via a vertical swipe gesture.
 ///
@@ -82,23 +82,23 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
   /// The parameters used to initialize the [PlatformPullToRefreshController].
   final PlatformPullToRefreshControllerCreationParams params;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.options}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.options}
   /// Use [settings] instead.
   ///{@endtemplate}
   @Deprecated("Use settings instead")
   PullToRefreshOptions get options => params.options;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.settings}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.settings}
   /// Initial settings.
   ///{@endtemplate}
   PullToRefreshSettings get settings => params.settings;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.onRefresh}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.onRefresh}
   ///Event called when a swipe gesture triggers a refresh.
   ///{@endtemplate}
   void Function()? get onRefresh => params.onRefresh;
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.setEnabled}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.setEnabled}
   ///Sets whether the pull-to-refresh feature is enabled or not.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -110,7 +110,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'setEnabled is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.isEnabled}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.isEnabled}
   ///Returns `true` is pull-to-refresh feature is enabled, otherwise `false`.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -122,7 +122,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'isEnabled is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.beginRefreshing}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.beginRefreshing}
   ///Tells the controller that a refresh operation was started programmatically.
   ///
   ///Call this method when an external event source triggers a programmatic refresh of your scrolling view.
@@ -138,7 +138,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'beginRefreshing is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.endRefreshing}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.endRefreshing}
   ///Tells the controller that a refresh operation has ended.
   ///
   ///Call this method at the end of any refresh operation (whether it was initiated programmatically or by the user)
@@ -155,7 +155,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'endRefreshing is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.isRefreshing}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.isRefreshing}
   ///Returns whether a refresh operation has been triggered and is in progress.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -167,7 +167,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'isRefreshing is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.setColor}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.setColor}
   ///Sets the color of the refresh control.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -179,7 +179,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'setColor is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.setBackgroundColor}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.setBackgroundColor}
   ///Sets the background color of the refresh control.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -191,7 +191,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'setBackgroundColor is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.setDistanceToTriggerSync}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.setDistanceToTriggerSync}
   ///Set the distance to trigger a sync in dips.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -202,7 +202,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'setDistanceToTriggerSync is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.setSlingshotDistance}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.setSlingshotDistance}
   ///Sets the distance that the refresh indicator can be pulled beyond its resting position during a swipe gesture.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -213,7 +213,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'setSlingshotDistance is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.getDefaultSlingshotDistance}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.getDefaultSlingshotDistance}
   ///Gets the default distance that the refresh indicator can be pulled beyond its resting position during a swipe gesture.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -224,7 +224,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'getDefaultSlingshotDistance is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.setSize}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.setSize}
   ///Use [setIndicatorSize] instead.
   ///{@endtemplate}
   @Deprecated("Use setIndicatorSize instead")
@@ -233,7 +233,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'setSize is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.setIndicatorSize}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.setIndicatorSize}
   ///Sets the size of the refresh indicator. One of [PullToRefreshSize.DEFAULT], or [PullToRefreshSize.LARGE].
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -244,7 +244,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'setIndicatorSize is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.setAttributedTitle}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.setAttributedTitle}
   ///Use [setStyledTitle] instead.
   ///{@endtemplate}
   @Deprecated("Use setStyledTitle instead")
@@ -253,7 +253,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'setAttributedTitle is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.setStyledTitle}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.setStyledTitle}
   ///Sets the styled title text to display in the refresh control.
   ///
   ///**Officially Supported Platforms/Implementations**:
@@ -264,7 +264,7 @@ abstract class PlatformPullToRefreshController extends PlatformInterface
         'setStyledTitle is not implemented on the current platform');
   }
 
-  ///{@template flutter_inappwebview_platform_interface.PlatformPullToRefreshController.dispose}
+  ///{@template webview_inapp_platform_interface.PlatformPullToRefreshController.dispose}
   ///Disposes the controller.
   ///{@endtemplate}
   @override
