@@ -1,3 +1,7 @@
+## 1.0.4
+
+- Update android dependencies 
+
 ## 1.0.3
 
 - Migrate project for Flutter 3.22 and Android 14 (API level 34)
