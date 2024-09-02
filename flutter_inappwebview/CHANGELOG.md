@@ -1,4 +1,7 @@
-## 1.0.2
+## 1.0.4
+- Add the library webview_inapp_ios
+
+## 1.0.3
 
 - Update flutter dependencies webview_inapp_android
 
